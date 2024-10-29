@@ -2,15 +2,13 @@ import { useEffect, useRef } from "react"
 
 const TextAnimateWithScroll = () => {
   // Animation ends at this scrollY value
-  const scrollMaxValue = 1500
+  const scrollMaxValue = 2000
 
   // Value that container is initially translated by (percentage)
   const initialContainerTranslateValue = 350
 
   // Value that characters are initially translated by (percentage)
-  const initialCharacterTranslateValue = 150
-
-  const stagger = 10
+  const initialCharacterTranslateValue = 158
 
   const parentContainerRef = useRef<HTMLDivElement>(null)
 
@@ -18,11 +16,10 @@ const TextAnimateWithScroll = () => {
     if (parentContainerRef.current) {
       // Normalize window.scrollY to have a max of 1.0 in section
       const normalizedScrollY = window.scrollY / scrollMaxValue
-      const val = Math.max(
+      const val = +Math.max(
         initialContainerTranslateValue * (1 - normalizedScrollY),
         0
-      )
-      console.log(val)
+      ).toFixed(2)
 
       parentContainerRef.current.style.transform = `translateY(${val}%)`
     }
@@ -35,15 +32,16 @@ const TextAnimateWithScroll = () => {
       // Normalize window.scrollY to have a max of 1.0 in section
       const normalizedScrollY = window.scrollY / scrollMaxValue
 
-      let index = 1
+      let index = 0
       for (const element of headingElements) {
         const htmlElement = element as HTMLElement
-        const val = Math.max(
-          ((stagger * index) / headingElements.length) *
-            initialCharacterTranslateValue *
-            (1 - normalizedScrollY),
+        const val = +Math.max(
+          0.15 *
+            (index + 5) *
+            (initialCharacterTranslateValue * (1 - normalizedScrollY)),
           0
-        )
+        ).toFixed(2)
+
         htmlElement.style.transform = `translateY(${val}%)`
         index++
       }
@@ -65,9 +63,9 @@ const TextAnimateWithScroll = () => {
 
   return (
     <section className='text-animate-with-scroll relative flex justify-center items-start h-[300vh] bg-black -z-10 overflow-hidden pointer-events-none'>
-      <div className='overflow-y-hidden fixed top-[100px]'>
+      <div className='fixed top-[100px]'>
         <div
-          className='heading-container'
+          className='heading-container overflow-hidden'
           ref={parentContainerRef}
           style={{
             transform: `translateY(${initialContainerTranslateValue}%)`,

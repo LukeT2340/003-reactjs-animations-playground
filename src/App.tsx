@@ -1,8 +1,8 @@
 import { useRef } from "react"
 import TextAnimateWithScroll from "./components/blocks/TextAnimateWithScroll"
-import SectionTwo from "./components/blocks/SectionTwo/index.tsx"
-import SectionThree from "./components/blocks/SectionThree/index.tsx"
-import LocomotiveParallax from "./js/parallax/index.tsx"
+import ClipPathAnimation from "./components/blocks/ClipPathAnimation"
+import SectionThree from "./components/blocks/SectionThree"
+import LocomotiveParallax from "./js/parallax"
 import Header from "./components/blocks/Header/Header.tsx"
 import Footer from "./components/blocks/Footer/Footer.tsx"
 
@@ -17,7 +17,7 @@ const App = () => {
           <article>
             <LocomotiveParallax locoScrollRef={locoScrollRef}>
               <TextAnimateWithScroll />
-              <SectionTwo />
+              <ClipPathAnimation />
               <SectionThree />
             </LocomotiveParallax>
           </article>

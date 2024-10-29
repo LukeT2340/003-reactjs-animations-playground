@@ -1,10 +1,10 @@
-import { useRef } from 'react'
-import Hero from './components/blocks/Hero'
-import SectionTwo from './components/blocks/SectionTwo/index.tsx'
-import SectionThree from './components/blocks/SectionThree/index.tsx'
-import LocomotiveParallax from './js/parallax/index.tsx'
-import Header from './components/blocks/Header/Header.tsx'
-import Footer from './components/blocks/Footer/Footer.tsx'
+import { useRef } from "react"
+import TextAnimateWithScroll from "./components/blocks/TextAnimateWithScroll"
+import SectionTwo from "./components/blocks/SectionTwo/index.tsx"
+import SectionThree from "./components/blocks/SectionThree/index.tsx"
+import LocomotiveParallax from "./js/parallax/index.tsx"
+import Header from "./components/blocks/Header/Header.tsx"
+import Footer from "./components/blocks/Footer/Footer.tsx"
 
 const App = () => {
   const locoScrollRef = useRef<HTMLElement>(null)
@@ -16,7 +16,7 @@ const App = () => {
           <Header />
           <article>
             <LocomotiveParallax locoScrollRef={locoScrollRef}>
-              <Hero />
+              <TextAnimateWithScroll />
               <SectionTwo />
               <SectionThree />
             </LocomotiveParallax>

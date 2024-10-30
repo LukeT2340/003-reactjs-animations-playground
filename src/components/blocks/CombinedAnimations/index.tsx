@@ -10,15 +10,15 @@ const CombinedAnimations: React.FC = () => {
       <TextAnimationWithScroll
         text='monkey think'
         animationStartYValue={0}
-        animationEndYValue={500}
+        animationEndYValue={1000}
         top={"10vh"}
       />
-      <TextAnimationWithScroll
+      {/* <TextAnimationWithScroll
         text='monkey    do'
         animationStartYValue={500}
         animationEndYValue={1000}
         top={"70vh"}
-      />
+      /> */}
       <ClipPathAnimation
         animationStartYValue={0}
         animationEndYValue={2000}

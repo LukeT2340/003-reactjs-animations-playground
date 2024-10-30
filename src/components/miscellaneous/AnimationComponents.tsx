@@ -69,46 +69,28 @@ export const TextAnimationWithScroll = ({
   animationEndYValue,
   top,
 }: TextAnimationWithScrollProps) => {
-  // Value that container is initially translated by initially - percentage
-  const initialContainerTranslateValue = 550
-
-  // Value that the first character will be translated by initially. Other characters will be translated by more - percentage
-  const initialCharacterTranslateValue = 250
-
-  // Difference in animation degree between characters
-  const stagger = 1.3
-
-  // An ease of 1 is linear. Higher values gives more easeOut
-  const ease = 1.2
+  // Higher values give more easeOut
+  const ease = 1.02
 
   const containerRef = useRef<HTMLDivElement>(null)
 
-  const handleContainerTransform = () => {
+  const handleContainerTransform = (x: number) => {
     if (containerRef.current) {
-      const normalizedScrollY =
-        (window.scrollY - animationStartYValue) / animationEndYValue
-
-      const easedVal =
-        initialContainerTranslateValue *
-        Math.exp(-5 * Math.max(0, normalizedScrollY))
+      const easedVal = 100 * ease ** (-100 * x)
       containerRef.current.style.transform = `translateY(${easedVal}%)`
     }
   }
 
-  const handleCharacterTransform = () => {
+  const handleCharacterTransform = (x: number) => {
     if (containerRef.current) {
       const headingElements = containerRef.current.children
-      const normalizedScrollY =
-        (window.scrollY - animationStartYValue) / animationEndYValue
+
       let index = 0
       for (const element of headingElements) {
         const htmlElement = element as HTMLElement
-        const easedVal =
-          (index + 1) *
-          stagger *
-          initialCharacterTranslateValue *
-          ease ** (-12 * ease * Math.max(0, normalizedScrollY))
-        htmlElement.style.transform = `translateY(${easedVal}%)`
+
+        const easedVal = 100 * ease ** (-100 * x)
+        htmlElement.style.transform = `translateY(${(index + 1) * easedVal}%)`
         index++
       }
     }
@@ -116,8 +98,12 @@ export const TextAnimationWithScroll = ({
 
   useEffect(() => {
     const handleScroll = () => {
-      handleContainerTransform()
-      handleCharacterTransform()
+      const normalizedScrollY =
+        (window.scrollY - animationStartYValue) / animationEndYValue
+      const x = Math.max(0, normalizedScrollY)
+
+      handleContainerTransform(x)
+      handleCharacterTransform(x)
     }
 
     window.addEventListener("scroll", handleScroll)
@@ -133,7 +119,7 @@ export const TextAnimationWithScroll = ({
         className='heading-container overflow-hidden flex justify-center'
         ref={containerRef}
         style={{
-          transform: `translateY(${initialContainerTranslateValue}%)`,
+          transform: `translateY(100%)`,
         }}
       >
         {text.split("").map((char: string, index: number) => (
@@ -141,7 +127,7 @@ export const TextAnimationWithScroll = ({
             className='inline-block text-[200px] leading-[160px] text-white uppercase font-bold ease-out'
             key={index}
             style={{
-              transform: `translateY(${initialCharacterTranslateValue}%)`,
+              transform: `translateY(100%)`,
             }}
           >
             {char === " " ? "\u00A0" : char}

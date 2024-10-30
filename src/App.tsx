@@ -17,8 +17,6 @@ const App = () => {
           <article>
             <LocomotiveParallax locoScrollRef={locoScrollRef}>
               <CombinedAnimations />
-              {/* <ClipPathAnimation />
-              <TextAnimateWithScroll /> */}
             </LocomotiveParallax>
           </article>
           <Footer />

@@ -21,11 +21,11 @@ const CombinedAnimations: React.FC = () => {
         maskImage={"url(./src/assets/images/common/triangle.svg)"}
       >
         <TextAnimationWithScroll
-          text='monkey think'
+          text='monkey see'
           animationStartYValue={0}
           animationEndYValue={2000}
           top={"10vh"}
-          className='text-[170px] leading-[200px] text-white uppercase font-bold ease-out font-anton tracking-[10px]'
+          className='text-[170px] leading-[200px] text-red-500 uppercase font-bold ease-out font-anton tracking-[10px]'
         />
         <video autoPlay muted loop>
           <source src={video} type='video/mp4' />

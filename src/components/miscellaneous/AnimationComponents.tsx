@@ -30,7 +30,7 @@ export const ClipPathAnimation = ({
           (initialClipPathSize + 10) * ease ** (-b * x) - 10,
           0
         )
-
+        console.log(window.scrollY)
         containerRef.current.style.maskSize = `${y}%`
       }
     }
@@ -63,6 +63,7 @@ interface TextAnimationWithScrollProps {
   animationStartYValue: number // Pixel value
   animationEndYValue: number // Pixel value
   top: string
+  className?: string
 }
 
 export const TextAnimationWithScroll = ({
@@ -70,9 +71,10 @@ export const TextAnimationWithScroll = ({
   animationStartYValue,
   animationEndYValue,
   top,
+  className,
 }: TextAnimationWithScrollProps) => {
   // Higher values give more easeOut.
-  const ease = 1.01
+  const ease = 2.5
 
   const containerRef = useRef<HTMLDivElement>(null)
 
@@ -105,7 +107,6 @@ export const TextAnimationWithScroll = ({
       const normalizedScrollY =
         (window.scrollY - animationStartYValue) / animationEndYValue
       const x = Math.max(0, normalizedScrollY)
-      console.log(window.scrollY)
       handleContainerTransform(x)
       handleCharacterTransform(x)
     }
@@ -128,11 +129,12 @@ export const TextAnimationWithScroll = ({
       >
         {text.split("").map((char: string, index: number) => (
           <h1
-            className='inline-block text-[200px] leading-[160px] text-white uppercase font-bold ease-out'
             key={index}
             style={{
               transform: `translateY(100%)`,
+              display: "inline-block",
             }}
+            className={className}
           >
             {char === " " ? "\u00A0" : char}
           </h1>

@@ -19,17 +19,20 @@ export const ClipPathAnimation = ({
 
   useEffect(() => {
     const handleScroll = () => {
-      if (containerRef.current) {
-        const scrollVal = window.scrollY
-        const zeroedScrollVal = scrollVal - animationStartYValue
-        const normalizedScrollVal =
-          zeroedScrollVal / (animationEndYValue - animationStartYValue)
-        const clipPathSize = Math.max(
-          0,
-          (1 - normalizedScrollVal) * initialClipPathSize
-        )
+      const ease = 1.02
 
-        containerRef.current.style.maskSize = `${clipPathSize}%`
+      if (containerRef.current) {
+        const normalizedScrollY =
+          (window.scrollY - animationStartYValue) / animationEndYValue
+        const x = normalizedScrollY
+        const b = -Math.log(1 / (initialClipPathSize + 10)) / Math.log(ease)
+        const y = Math.max(
+          (initialClipPathSize + 10) * ease ** (-b * x) - 10,
+          0
+        )
+        console.log(y)
+
+        containerRef.current.style.maskSize = `${y}%`
       }
     }
 

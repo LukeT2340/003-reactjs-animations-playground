@@ -16,7 +16,7 @@ const CombinedAnimations: React.FC = () => {
       <TextAnimationWithScroll
         text='monkey    do'
         animationStartYValue={500}
-        animationEndYValue={1500}
+        animationEndYValue={2000}
         top={"70vh"}
       />
       <ClipPathAnimation

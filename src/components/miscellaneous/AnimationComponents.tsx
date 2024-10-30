@@ -30,7 +30,6 @@ export const ClipPathAnimation = ({
           (initialClipPathSize + 10) * ease ** (-b * x) - 10,
           0
         )
-        console.log(y)
 
         containerRef.current.style.maskSize = `${y}%`
       }
@@ -87,15 +86,14 @@ export const TextAnimationWithScroll = ({
   }
 
   const handleCharacterTransform = (x: number) => {
-    const b = -Math.log(1 / 100) / Math.log(ease)
-    const y = 100 * ease ** (-b * x)
-
     if (containerRef.current) {
       const headingElements = containerRef.current.children
 
       let index = 0
       for (const element of headingElements) {
         const htmlElement = element as HTMLElement
+        const b = ((-1 / (index + 1)) * Math.log(1 / 100)) / Math.log(ease)
+        const y = 100 * ease ** (-b * (index + 1) * x)
         htmlElement.style.transform = `translateY(${(index + 1) * y}%)`
         index++
       }
@@ -107,7 +105,7 @@ export const TextAnimationWithScroll = ({
       const normalizedScrollY =
         (window.scrollY - animationStartYValue) / animationEndYValue
       const x = Math.max(0, normalizedScrollY)
-
+      console.log(window.scrollY)
       handleContainerTransform(x)
       handleCharacterTransform(x)
     }

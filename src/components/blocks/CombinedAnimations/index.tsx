@@ -21,7 +21,7 @@ const CombinedAnimations: React.FC = () => {
       />
       <ClipPathAnimation
         animationStartYValue={0}
-        animationEndYValue={2000}
+        animationEndYValue={3000}
         initialClipPathSize={240}
         maskImage={"url(./src/assets/images/common/triangle.svg)"}
       >

@@ -4,7 +4,7 @@ interface ClipPathAnimationProps {
   children: React.ReactNode
   animationStartYValue: number // Pixel value
   animationEndYValue: number // Pixel value
-  finalClipPathSize: number // Percentage
+  initialClipPathSize: number // Percentage
   maskImage: string // of form url(./src/assets/images/common/triangle.svg)
 }
 
@@ -12,7 +12,7 @@ export const ClipPathAnimation = ({
   children,
   animationStartYValue,
   animationEndYValue,
-  finalClipPathSize,
+  initialClipPathSize,
   maskImage,
 }: ClipPathAnimationProps) => {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -26,7 +26,7 @@ export const ClipPathAnimation = ({
           zeroedScrollVal / (animationEndYValue - animationStartYValue)
         const clipPathSize = Math.max(
           0,
-          (1 - normalizedScrollVal) * finalClipPathSize
+          (1 - normalizedScrollVal) * initialClipPathSize
         )
 
         containerRef.current.style.maskSize = `${clipPathSize}%`
@@ -48,6 +48,7 @@ export const ClipPathAnimation = ({
         maskImage: maskImage,
         maskRepeat: "no-repeat",
         maskPosition: "50%",
+        maskSize: `${initialClipPathSize}%`,
       }}
     >
       {children}
@@ -94,7 +95,7 @@ export const TextAnimationWithScroll = ({
       const headingElements = containerRef.current.children
       const normalizedScrollY =
         (window.scrollY - animationStartYValue) / animationEndYValue
-
+      console.log(normalizedScrollY)
       let index = 0
       for (const element of headingElements) {
         const htmlElement = element as HTMLElement

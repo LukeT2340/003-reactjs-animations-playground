@@ -6,7 +6,7 @@ import video from "../../../assets/videos/abf9ac84-a77ef1de.mp4"
 
 const CombinedAnimations: React.FC = () => {
   return (
-    <section className='section-combined-aniamtion h-[300vw] w-screen bg-black relative -z-0'>
+    <section className='section-combined-aniamtion h-[6000px] w-screen bg-black relative -z-0'>
       <TextAnimationWithScroll
         text='monkey think'
         animationStartYValue={0}
@@ -14,15 +14,15 @@ const CombinedAnimations: React.FC = () => {
         top={"10vh"}
       />
       <TextAnimationWithScroll
-        text='monkey think'
-        animationStartYValue={0}
+        text='monkey    do'
+        animationStartYValue={1000}
         animationEndYValue={3000}
         top={"70vh"}
       />
       <ClipPathAnimation
-        animationStartYValue={2000}
-        animationEndYValue={3000}
-        finalClipPathSize={300}
+        animationStartYValue={0}
+        animationEndYValue={5000}
+        initialClipPathSize={300}
         maskImage={"url(./src/assets/images/common/triangle.svg)"}
       >
         <video autoPlay muted loop>

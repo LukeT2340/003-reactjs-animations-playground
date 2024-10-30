@@ -69,11 +69,17 @@ export const TextAnimationWithScroll = ({
   animationEndYValue,
   top,
 }: TextAnimationWithScrollProps) => {
-  // Value that container is initially translated by (percentage)
-  const initialContainerTranslateValue = 350
+  // Value that container is initially translated by initially - percentage
+  const initialContainerTranslateValue = 550
 
-  // Value that characters are initially translated by (percentage)
-  const initialCharacterTranslateValue = 158
+  // Value that the first character will be translated by initially. Other characters will be translated by more - percentage
+  const initialCharacterTranslateValue = 250
+
+  // Difference in animation degree between characters
+  const stagger = 1.3
+
+  // An ease of 1 is linear. Higher values gives more easeOut
+  const ease = 1.2
 
   const containerRef = useRef<HTMLDivElement>(null)
 
@@ -81,12 +87,11 @@ export const TextAnimationWithScroll = ({
     if (containerRef.current) {
       const normalizedScrollY =
         (window.scrollY - animationStartYValue) / animationEndYValue
-      const val = +Math.max(
-        initialContainerTranslateValue * (1 - normalizedScrollY),
-        0
-      ).toFixed(2)
 
-      containerRef.current.style.transform = `translateY(${val}%)`
+      const easedVal =
+        initialContainerTranslateValue *
+        Math.exp(-5 * Math.max(0, normalizedScrollY))
+      containerRef.current.style.transform = `translateY(${easedVal}%)`
     }
   }
 
@@ -95,18 +100,15 @@ export const TextAnimationWithScroll = ({
       const headingElements = containerRef.current.children
       const normalizedScrollY =
         (window.scrollY - animationStartYValue) / animationEndYValue
-      console.log(normalizedScrollY)
       let index = 0
       for (const element of headingElements) {
         const htmlElement = element as HTMLElement
-        const val = +Math.max(
-          0.15 *
-            (index + 5) *
-            (initialCharacterTranslateValue * (1 - normalizedScrollY)),
-          0
-        ).toFixed(2)
-
-        htmlElement.style.transform = `translateY(${val}%)`
+        const easedVal =
+          (index + 1) *
+          stagger *
+          initialCharacterTranslateValue *
+          ease ** (-12 * ease * Math.max(0, normalizedScrollY))
+        htmlElement.style.transform = `translateY(${easedVal}%)`
         index++
       }
     }

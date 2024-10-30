@@ -10,19 +10,19 @@ const CombinedAnimations: React.FC = () => {
       <TextAnimationWithScroll
         text='monkey think'
         animationStartYValue={0}
-        animationEndYValue={3000}
+        animationEndYValue={500}
         top={"10vh"}
       />
       <TextAnimationWithScroll
         text='monkey    do'
-        animationStartYValue={1000}
-        animationEndYValue={3000}
+        animationStartYValue={500}
+        animationEndYValue={1000}
         top={"70vh"}
       />
       <ClipPathAnimation
         animationStartYValue={0}
-        animationEndYValue={5000}
-        initialClipPathSize={300}
+        animationEndYValue={2000}
+        initialClipPathSize={240}
         maskImage={"url(./src/assets/images/common/triangle.svg)"}
       >
         <video autoPlay muted loop>

@@ -76,8 +76,9 @@ export const TextAnimationWithScroll = ({
 
   const handleContainerTransform = (x: number) => {
     if (containerRef.current) {
-      const easedVal = 100 * ease ** (-100 * x)
-      containerRef.current.style.transform = `translateY(${easedVal}%)`
+      const b = -Math.log(1 / 100) / Math.log(ease)
+      const y = 100 * ease ** (-b * x)
+      containerRef.current.style.transform = `translateY(${y}%)`
     }
   }
 
@@ -88,9 +89,10 @@ export const TextAnimationWithScroll = ({
       let index = 0
       for (const element of headingElements) {
         const htmlElement = element as HTMLElement
-
-        const easedVal = 100 * ease ** (-100 * x)
-        htmlElement.style.transform = `translateY(${(index + 1) * easedVal}%)`
+        const b = -Math.log(1 / 100) / Math.log(ease)
+        const y = 100 * ease ** (-b * x)
+        console.log(window.scrollY)
+        htmlElement.style.transform = `translateY(${(index + 1) * y}%)`
         index++
       }
     }

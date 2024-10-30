@@ -69,29 +69,30 @@ export const TextAnimationWithScroll = ({
   animationEndYValue,
   top,
 }: TextAnimationWithScrollProps) => {
-  // Higher values give more easeOut
-  const ease = 1.02
+  // Higher values give more easeOut.
+  const ease = 1.01
 
   const containerRef = useRef<HTMLDivElement>(null)
 
   const handleContainerTransform = (x: number) => {
+    const b = -Math.log(1 / 100) / Math.log(ease)
+    const y = 100 * ease ** (-b * x)
+
     if (containerRef.current) {
-      const b = -Math.log(1 / 100) / Math.log(ease)
-      const y = 100 * ease ** (-b * x)
       containerRef.current.style.transform = `translateY(${y}%)`
     }
   }
 
   const handleCharacterTransform = (x: number) => {
+    const b = -Math.log(1 / 100) / Math.log(ease)
+    const y = 100 * ease ** (-b * x)
+
     if (containerRef.current) {
       const headingElements = containerRef.current.children
 
       let index = 0
       for (const element of headingElements) {
         const htmlElement = element as HTMLElement
-        const b = -Math.log(1 / 100) / Math.log(ease)
-        const y = 100 * ease ** (-b * x)
-        console.log(window.scrollY)
         htmlElement.style.transform = `translateY(${(index + 1) * y}%)`
         index++
       }

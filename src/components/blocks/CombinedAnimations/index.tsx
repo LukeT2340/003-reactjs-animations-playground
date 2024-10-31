@@ -6,13 +6,13 @@ import video from "../../../assets/videos/abf9ac84-a77ef1de.mp4"
 
 const CombinedAnimations: React.FC = () => {
   return (
-    <section className='section-combined-aniamtion h-[8000px] w-screen bg-black relative -z-0'>
+    <section className='section-combined-aniamtion h-[9000px] w-screen bg-black relative -z-0'>
       <TextAnimationWithScroll
         text='monkey    do'
         animationStartYValue={3000}
         animationEndYValue={4000}
         top={"10vh"}
-        className='text-[170px] leading-[200px] text-white uppercase font-bold ease-out font-anton tracking-[10px]'
+        className='text-[450px] leading-[500px] text-white uppercase font-bold ease-out font-anton tracking-[10px]'
       />
       <ClipPathAnimation
         animationStartYValue={2000}
@@ -25,9 +25,9 @@ const CombinedAnimations: React.FC = () => {
           animationStartYValue={0}
           animationEndYValue={2000}
           top={"10vh"}
-          className='text-[170px] leading-[200px] text-red-500 uppercase font-bold ease-out font-anton tracking-[10px]'
+          className='text-[450px] leading-[500px] text-red-500 uppercase font-bold ease-out font-anton tracking-[10px]'
         />
-        <video autoPlay muted loop>
+        <video autoPlay muted loop width='100%'>
           <source src={video} type='video/mp4' />
         </video>
       </ClipPathAnimation>

@@ -8,18 +8,25 @@ const CombinedAnimations: React.FC = () => {
   return (
     <section className='section-combined-aniamtion h-[7500px] w-screen bg-black relative -z-0'>
       <ClipPathAnimation
-        animationStartYValue={500}
-        animationEndYValue={1500}
+        animationStartYValue={1200}
+        animationEndYValue={1800}
         maxClipPathSize={240}
         maskImage={"url(./src/assets/images/common/triangle.svg)"}
         animationDirection='hide'
       >
         <TextAnimationWithScroll
-          text='hiding section'
+          text='COOL TEXT ANIMATION'
           animationStartYValue={0}
           animationEndYValue={500}
           top={"10vh"}
-          className='text-[250px] leading-[300px] text-purple-500 uppercase font-bold ease-out font-anton tracking-[10px]'
+          className='text-[150px] leading-[300px] text-white uppercase font-bold ease-out font-wetPaint tracking-[10px]'
+        />
+        <TextAnimationWithScroll
+          text='hiding section'
+          animationStartYValue={500}
+          animationEndYValue={1000}
+          top={"30vh"}
+          className='text-[200px] leading-[300px] text-white uppercase font-bold ease-out font-anton tracking-[10px]'
         />
         <video autoPlay muted loop width='100%'>
           <source src={video} type='video/mp4' />
@@ -27,8 +34,8 @@ const CombinedAnimations: React.FC = () => {
       </ClipPathAnimation>
       <TextAnimationWithScroll
         text='media gallery'
-        animationStartYValue={800}
-        animationEndYValue={1500}
+        animationStartYValue={1500}
+        animationEndYValue={2000}
         top={"10vh"}
         className='text-[250px] leading-[300px] text-white uppercase font-bold ease-out font-anton tracking-[10px]'
       />
@@ -40,10 +47,10 @@ const CombinedAnimations: React.FC = () => {
         className='w-[50vw]'
       />
       <ClipPathAnimation
-        animationStartYValue={4000}
+        animationStartYValue={3700}
         animationEndYValue={5000}
         maxClipPathSize={240}
-        maskImage={"url(./src/assets/images/common/triangle.svg)"}
+        maskImage={"url(./src/assets/images/common/alien.svg)"}
         animationDirection='reveal'
         className='z-50'
       >

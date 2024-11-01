@@ -23,14 +23,14 @@ export const ClipPathAnimation = ({
 
       if (containerRef.current) {
         const normalizedScrollY =
-          (window.scrollY - animationStartYValue) / animationEndYValue
+          (window.scrollY - animationStartYValue) /
+          (animationEndYValue - animationStartYValue)
         const x = normalizedScrollY
         const b = -Math.log(1 / (initialClipPathSize + 10)) / Math.log(ease)
         const y = Math.max(
           (initialClipPathSize + 10) * ease ** (-b * x) - 10,
           0
         )
-        console.log(window.scrollY)
         containerRef.current.style.maskSize = `${y}%`
       }
     }

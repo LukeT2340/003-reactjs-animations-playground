@@ -50,7 +50,8 @@ export const TextAnimationWithScroll = ({
   useEffect(() => {
     const handleScroll = () => {
       const normalizedScrollY =
-        (window.scrollY - animationStartYValue) / animationEndYValue
+        (window.scrollY - animationStartYValue) /
+        (animationEndYValue - animationStartYValue)
       const x = Math.max(0, normalizedScrollY)
       handleContainerTransform(x)
       handleCharacterTransform(x)

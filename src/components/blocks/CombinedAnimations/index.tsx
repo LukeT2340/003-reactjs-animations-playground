@@ -10,7 +10,7 @@ const CombinedAnimations: React.FC = () => {
       <ClipPathAnimation
         animationStartYValue={1200}
         animationEndYValue={1800}
-        maxClipPathSize={240}
+        maxClipPathSize={100}
         maskImage={"url(./src/assets/images/common/triangle.svg)"}
         animationDirection='hide'
       >
@@ -49,7 +49,7 @@ const CombinedAnimations: React.FC = () => {
       <ClipPathAnimation
         animationStartYValue={3700}
         animationEndYValue={5000}
-        maxClipPathSize={240}
+        maxClipPathSize={100}
         maskImage={"url(./src/assets/images/common/alien.svg)"}
         animationDirection='reveal'
         className='z-50'
@@ -59,7 +59,7 @@ const CombinedAnimations: React.FC = () => {
           animationStartYValue={5000}
           animationEndYValue={6000}
           top={"10vh"}
-          className='text-[250px] leading-[300px] text-red-500 uppercase font-bold ease-out font-anton tracking-[10px]'
+          className='text-[250px] leading-[300px] text-emerald-200 uppercase font-bold ease-out font-anton tracking-[10px]'
         />
         <video autoPlay muted loop width='100%'>
           <source src={video} type='video/mp4' />

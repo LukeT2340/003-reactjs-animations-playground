@@ -7,7 +7,7 @@ interface ClipPathAnimationProps {
   maxClipPathSize: number // Percentage
   maskImage: string // of form url(./src/assets/images/common/triangle.svg)
   animationDirection: string // If animationDirection is "hide", it will hide whatever is inside it. If it is set to anything else it will reveal
-  className: string
+  className?: string
 }
 
 export const ClipPathAnimation = ({

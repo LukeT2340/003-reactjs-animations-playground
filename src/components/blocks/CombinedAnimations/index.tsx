@@ -6,7 +6,7 @@ import ImageGalleryAnimation from "../../miscellaneous/ImageGalleryAnimation"
 
 const CombinedAnimations: React.FC = () => {
   return (
-    <section className='section-combined-aniamtion h-[20000px] w-screen bg-black relative -z-0'>
+    <section className='section-combined-aniamtion h-[5000px] w-screen bg-black relative -z-0'>
       <ClipPathAnimation
         animationStartYValue={500}
         animationEndYValue={1000}
@@ -26,15 +26,15 @@ const CombinedAnimations: React.FC = () => {
       </ClipPathAnimation>
       <TextAnimationWithScroll
         text='monkey    do'
-        animationStartYValue={1000}
+        animationStartYValue={800}
         animationEndYValue={1500}
         top={"10vh"}
         className='text-[250px] leading-[300px] text-white uppercase font-bold ease-out font-anton tracking-[10px]'
       />
       <ImageGalleryAnimation
         images={images}
-        animationStartYValue={2500}
-        animationEndYValue={15000}
+        animationStartYValue={1500}
+        animationEndYValue={4000}
         top={"40vh"}
         className='w-[50vw] z-50'
       />

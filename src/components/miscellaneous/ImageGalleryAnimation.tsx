@@ -32,7 +32,6 @@ const ImageGalleryAnimation: React.FC<ImageGalleryAnimationProps> = ({
               animationStartYValue + (index + 1) * eachImageAnimationYDiff
             }
             className={className}
-            index={index}
           />
         ))}
       </div>
@@ -45,7 +44,6 @@ interface SingleImageAnimationProps {
   animationStartYValue: number
   animationEndYValue: number
   className: string
-  index: number
 }
 
 const SingleImageAnimation: React.FC<SingleImageAnimationProps> = ({
@@ -53,14 +51,12 @@ const SingleImageAnimation: React.FC<SingleImageAnimationProps> = ({
   animationStartYValue,
   animationEndYValue,
   className,
-  index,
 }) => {
   const imageRef = useRef<HTMLDivElement>(null)
   const initialTranslateY = 300
-
   useEffect(() => {
     const handleScroll = () => {
-      const ease = 1.02
+      const ease = 1.5
       const animationDistribution = 0.4 // 0.5 means that the part of the animation where the image rises to the center of the screen will take up 50% of the animation, and the part where the image shrinks will take up 50% as well
 
       if (imageRef.current) {
@@ -71,7 +67,7 @@ const SingleImageAnimation: React.FC<SingleImageAnimationProps> = ({
 
         imageRef.current.style.display = "block"
         if (normalizedScrollY < animationDistribution) {
-          const x = normalizedScrollY
+          const x = normalizedScrollY * (1 - animationDistribution)
           if (x < 0 || x > 1) {
             imageRef.current.style.display = "none"
             return

@@ -61,22 +61,22 @@ const SingleImageAnimation: React.FC<SingleImageAnimationProps> = ({
   useEffect(() => {
     const handleScroll = () => {
       const ease = 1.02
-      const animationDistribution = 0.5 // 0.5 means that the part of the animation where the image rises to the center of the screen will take up 50% of the animation, and the part where the image shrinks will take up 50% as well
+      const animationDistribution = 0.4 // 0.5 means that the part of the animation where the image rises to the center of the screen will take up 50% of the animation, and the part where the image shrinks will take up 50% as well
+
       if (imageRef.current) {
+        // Take scroll value and transform it to be between 0 and 1. 0 is start of animation and 1 is end of animation
         const normalizedScrollY =
           (window.scrollY - animationStartYValue) /
           (animationEndYValue - animationStartYValue)
 
-        if (normalizedScrollY < 0 || normalizedScrollY > 1) {
-          imageRef.current.style.display = "none"
-          return
-        }
         imageRef.current.style.display = "block"
         if (normalizedScrollY < animationDistribution) {
           const x = normalizedScrollY
           if (x < 0 || x > 1) {
+            imageRef.current.style.display = "none"
             return
           }
+
           const b =
             ((-1 / animationDistribution) * Math.log(1 / initialTranslateY)) /
             Math.log(ease)
@@ -84,10 +84,14 @@ const SingleImageAnimation: React.FC<SingleImageAnimationProps> = ({
           imageRef.current.style.transform = `translateY(${y}%)`
         } else {
           const x =
-            (1 / animationDistribution) *
+            (1 / (1 - animationDistribution)) *
             (normalizedScrollY - animationDistribution)
+          if (x < 0 || x > 1) {
+            imageRef.current.style.display = "none"
+            return
+          }
           const scale = 1 - x ** 3
-          imageRef.current.style.transform = `scale(${scale})`
+          imageRef.current.style.scale = `${scale}`
         }
       }
     }

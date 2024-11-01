@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react"
 
 interface ClipPathAnimationProps {
-  children: React.ReactNode
+  children: React.ReactNode // Stuff we want inside the mask shape
   animationStartYValue: number // Pixel value
   animationEndYValue: number // Pixel value
   initialClipPathSize: number // Percentage

@@ -6,7 +6,7 @@ import ImageGalleryAnimation from "../../miscellaneous/ImageGalleryAnimation"
 
 const CombinedAnimations: React.FC = () => {
   return (
-    <section className='section-combined-aniamtion h-[5000px] w-screen bg-black relative -z-0'>
+    <section className='section-combined-aniamtion h-[7000px] w-screen bg-black relative -z-0'>
       <ClipPathAnimation
         animationStartYValue={500}
         animationEndYValue={1000}
@@ -35,7 +35,7 @@ const CombinedAnimations: React.FC = () => {
         images={images}
         animationStartYValue={1500}
         animationEndYValue={4000}
-        top={"40vh"}
+        top={"34vh"}
         className='w-[50vw] z-50'
       />
     </section>

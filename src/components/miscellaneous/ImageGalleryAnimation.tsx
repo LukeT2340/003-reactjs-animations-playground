@@ -15,8 +15,8 @@ const ImageGalleryAnimation: React.FC<ImageGalleryAnimationProps> = ({
   top,
   className,
 }) => {
-  const eachImageAnimationYDiff =
-    (animationEndYValue - animationStartYValue) / images.length
+  const yDiff = (animationEndYValue - animationStartYValue) / images.length
+  const overlap = 200
 
   return (
     <div className='fixed w-full' style={{ top }}>
@@ -25,11 +25,9 @@ const ImageGalleryAnimation: React.FC<ImageGalleryAnimationProps> = ({
           <SingleImageAnimation
             key={image}
             image={image}
-            animationStartYValue={
-              animationStartYValue + index * eachImageAnimationYDiff
-            }
+            animationStartYValue={animationStartYValue + index * yDiff}
             animationEndYValue={
-              animationStartYValue + (index + 1) * eachImageAnimationYDiff
+              animationStartYValue + (index + 1) * yDiff + overlap
             }
             className={className}
           />
@@ -56,8 +54,8 @@ const SingleImageAnimation: React.FC<SingleImageAnimationProps> = ({
   const initialTranslateY = 300
   useEffect(() => {
     const handleScroll = () => {
-      const ease = 1.5
-      const animationDistribution = 0.4 // 0.5 means that the part of the animation where the image rises to the center of the screen will take up 50% of the animation, and the part where the image shrinks will take up 50% as well
+      const ease = 1.04
+      const animationDistribution = 0.7 // 0.5 means that the part of the animation where the image rises to the center of the screen will take up 50% of the animation, and the part where the image shrinks will take up 50% as well
 
       if (imageRef.current) {
         // Take scroll value and transform it to be between 0 and 1. 0 is start of animation and 1 is end of animation
@@ -65,14 +63,15 @@ const SingleImageAnimation: React.FC<SingleImageAnimationProps> = ({
           (window.scrollY - animationStartYValue) /
           (animationEndYValue - animationStartYValue)
 
-        imageRef.current.style.display = "block"
-        if (normalizedScrollY < animationDistribution) {
-          const x = normalizedScrollY * (1 - animationDistribution)
-          if (x < 0 || x > 1) {
-            imageRef.current.style.display = "none"
-            return
-          }
+        if (normalizedScrollY < 0 || normalizedScrollY > 1) {
+          imageRef.current.style.display = "none"
+          return
+        }
 
+        imageRef.current.style.display = "block"
+
+        if (normalizedScrollY < animationDistribution) {
+          const x = normalizedScrollY / animationDistribution
           const b =
             ((-1 / animationDistribution) * Math.log(1 / initialTranslateY)) /
             Math.log(ease)
@@ -82,10 +81,6 @@ const SingleImageAnimation: React.FC<SingleImageAnimationProps> = ({
           const x =
             (1 / (1 - animationDistribution)) *
             (normalizedScrollY - animationDistribution)
-          if (x < 0 || x > 1) {
-            imageRef.current.style.display = "none"
-            return
-          }
           const scale = 1 - x ** 3
           imageRef.current.style.scale = `${scale}`
         }
@@ -99,12 +94,14 @@ const SingleImageAnimation: React.FC<SingleImageAnimationProps> = ({
   }, [])
 
   return (
-    <div className='flex justify-center w-full'>
-      <div
-        ref={imageRef}
-        style={{ transform: `translate(-50%,${initialTranslateY}%)` }}
-      >
-        <img src={image} alt='motion image' className={className} />
+    <div className='absolute left-1/2 -translate-x-1/2'>
+      <div className='flex justify-center w-full'>
+        <div
+          ref={imageRef}
+          style={{ transform: `translate(-50%,${initialTranslateY}%)` }}
+        >
+          <img src={image} alt='motion image' className={className} />
+        </div>
       </div>
     </div>
   )

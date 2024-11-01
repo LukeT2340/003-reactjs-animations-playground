@@ -51,7 +51,7 @@ const SingleImageAnimation: React.FC<SingleImageAnimationProps> = ({
   className,
 }) => {
   const imageRef = useRef<HTMLDivElement>(null)
-  const initialTranslateY = 300
+  const initialTranslateY = 150
   useEffect(() => {
     const handleScroll = () => {
       const ease = 1.04

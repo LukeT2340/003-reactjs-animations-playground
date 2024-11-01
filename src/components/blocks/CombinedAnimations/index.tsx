@@ -6,12 +6,13 @@ import ImageGalleryAnimation from "../../miscellaneous/ImageGalleryAnimation"
 
 const CombinedAnimations: React.FC = () => {
   return (
-    <section className='section-combined-aniamtion h-[7000px] w-screen bg-black relative -z-0'>
+    <section className='section-combined-aniamtion h-[5500px] w-screen bg-black relative -z-0'>
       <ClipPathAnimation
         animationStartYValue={500}
-        animationEndYValue={1000}
-        initialClipPathSize={240}
+        animationEndYValue={1500}
+        maxClipPathSize={240}
         maskImage={"url(./src/assets/images/common/triangle.svg)"}
+        animationDirection='hide'
       >
         <TextAnimationWithScroll
           text='monkey see'
@@ -36,7 +37,7 @@ const CombinedAnimations: React.FC = () => {
         animationStartYValue={1500}
         animationEndYValue={4000}
         top={"34vh"}
-        className='w-[50vw] z-50'
+        className='w-[50vw]'
       />
     </section>
   )

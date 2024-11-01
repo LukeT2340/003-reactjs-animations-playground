@@ -4,16 +4,20 @@ interface ClipPathAnimationProps {
   children: React.ReactNode // Stuff we want inside the mask shape
   animationStartYValue: number // Pixel value
   animationEndYValue: number // Pixel value
-  initialClipPathSize: number // Percentage
+  maxClipPathSize: number // Percentage
   maskImage: string // of form url(./src/assets/images/common/triangle.svg)
+  animationDirection: string // If animationDirection is "hide", it will hide whatever is inside it. If it is set to anything else it will reveal
+  className: string
 }
 
 export const ClipPathAnimation = ({
   children,
   animationStartYValue,
   animationEndYValue,
-  initialClipPathSize,
+  maxClipPathSize,
   maskImage,
+  animationDirection,
+  className,
 }: ClipPathAnimationProps) => {
   const containerRef = useRef<HTMLDivElement>(null)
 
@@ -25,12 +29,13 @@ export const ClipPathAnimation = ({
         const normalizedScrollY =
           (window.scrollY - animationStartYValue) /
           (animationEndYValue - animationStartYValue)
-        const x = normalizedScrollY
-        const b = -Math.log(1 / (initialClipPathSize + 10)) / Math.log(ease)
-        const y = Math.max(
-          (initialClipPathSize + 10) * ease ** (-b * x) - 10,
-          0
-        )
+        const x =
+          animationDirection === "hide"
+            ? normalizedScrollY
+            : 1 - normalizedScrollY
+
+        const b = -Math.log(1 / (maxClipPathSize + 10)) / Math.log(ease)
+        const y = Math.max((maxClipPathSize + 10) * ease ** (-b * x) - 10, 0)
         containerRef.current.style.maskSize = `${y}%`
       }
     }
@@ -44,13 +49,13 @@ export const ClipPathAnimation = ({
 
   return (
     <div
-      className='fixed top-0 left-0 right-0 container max-w-full'
+      className={`${className} fixed top-0 left-0 right-0 w-full h-full`}
       ref={containerRef}
       style={{
         maskImage: maskImage,
         maskRepeat: "no-repeat",
         maskPosition: "50%",
-        maskSize: `${initialClipPathSize}%`,
+        maskSize: `${maxClipPathSize}%`,
       }}
     >
       {children}

@@ -47,9 +47,9 @@ const CombinedAnimations: React.FC = () => {
         className='w-[50vw]'
       />
       <ClipPathAnimation
-        animationStartYValue={3700}
+        animationStartYValue={3000}
         animationEndYValue={5000}
-        maxClipPathSize={100}
+        maxClipPathSize={1000}
         maskImage={"url(./src/assets/images/common/alien.svg)"}
         animationDirection='reveal'
         className='z-50'

@@ -58,7 +58,7 @@ export const ClipPathAnimation = ({
         maskSize: `${maxClipPathSize}%`,
       }}
     >
-      {children}
+      {children}``
     </div>
   )
 }

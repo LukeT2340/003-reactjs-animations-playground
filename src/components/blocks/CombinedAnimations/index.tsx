@@ -1,3 +1,5 @@
+// import { scroll } from "framer-motion"
+
 import ClipPathAnimation from "../../miscellaneous/ClipPathAnimation"
 import TextAnimationWithScroll from "../../miscellaneous/TextAnimationWithScroll"
 import video from "../../../assets/videos/abf9ac84-a77ef1de.mp4"
@@ -5,6 +7,8 @@ import { images } from "../../../assets/data/slides"
 import ImageGalleryAnimation from "../../miscellaneous/ImageGalleryAnimation"
 
 const CombinedAnimations: React.FC = () => {
+  // scroll((progress) => console.log("Progress: ", progress)) If I were to do this again I'd use this to track how far we are through the webpage as opposed to window.scrollY
+
   return (
     <section className='section-combined-aniamtion h-[7500px] w-screen bg-black relative -z-0'>
       <ClipPathAnimation

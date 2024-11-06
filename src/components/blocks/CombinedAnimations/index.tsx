@@ -4,7 +4,7 @@ import ClipPathAnimation from "../../miscellaneous/ClipPathAnimation"
 import TextAnimationWithScroll from "../../miscellaneous/TextAnimationWithScroll"
 // import video from "./src/a"
 // // import video from "../../../assets/videos/abf9ac84-a77ef1de.mp4"
-import { images } from "../../../assets/data/slides"
+import { images } from "../../../../public/assets/data/slides"
 import ImageGalleryAnimation from "../../miscellaneous/ImageGalleryAnimation"
 
 const CombinedAnimations: React.FC = () => {
@@ -16,7 +16,7 @@ const CombinedAnimations: React.FC = () => {
         animationStartYValue={1200}
         animationEndYValue={1800}
         maxClipPathSize={100}
-        maskImage={"url(./src/assets/images/common/triangle.svg)"}
+        maskImage={"url(./public/assets/images/common/triangle.svg)"}
         animationDirection='hide'
       >
         <TextAnimationWithScroll
@@ -34,7 +34,10 @@ const CombinedAnimations: React.FC = () => {
           className='text-[200px] leading-[300px] text-white uppercase font-bold ease-out font-anton tracking-[10px]'
         />
         <video autoPlay muted loop width='100%'>
-          <source src={"./src/public/abf9ac84-a77ef1de.mp4"} type='video/mp4' />
+          <source
+            src={"./public/assets/videos/abf9ac84-a77ef1de.mp4"}
+            type='video/mp4'
+          />
         </video>
       </ClipPathAnimation>
       <TextAnimationWithScroll
@@ -55,7 +58,7 @@ const CombinedAnimations: React.FC = () => {
         animationStartYValue={3500}
         animationEndYValue={5000}
         maxClipPathSize={1050}
-        maskImage={"url(./src/assets/images/common/alien.svg)"}
+        maskImage={"url(./public/assets/images/common/alien.svg)"}
         animationDirection='reveal'
         className='z-50'
       >
@@ -67,7 +70,10 @@ const CombinedAnimations: React.FC = () => {
           className='text-[250px] leading-[300px] text-emerald-200 uppercase font-bold ease-out font-anton tracking-[10px]'
         />
         <video autoPlay muted loop width='100%'>
-          <source src={"./src/public/abf9ac84-a77ef1de.mp4"} type='video/mp4' />
+          <source
+            src={"./public/assets/videos/abf9ac84-a77ef1de.mp4"}
+            type='video/mp4'
+          />
         </video>
       </ClipPathAnimation>
     </section>

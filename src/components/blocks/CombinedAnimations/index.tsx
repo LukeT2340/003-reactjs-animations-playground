@@ -16,7 +16,7 @@ const CombinedAnimations: React.FC = () => {
         animationStartYValue={1200}
         animationEndYValue={1800}
         maxClipPathSize={100}
-        maskImage={"url(./public/assets/images/common/triangle.svg)"}
+        maskImage={"url(/assets/images/common/triangle.svg)"}
         animationDirection='hide'
       >
         <TextAnimationWithScroll
@@ -35,7 +35,7 @@ const CombinedAnimations: React.FC = () => {
         />
         <video autoPlay muted loop width='100%'>
           <source
-            src={"./public/assets/videos/abf9ac84-a77ef1de.mp4"}
+            src={"/assets/videos/abf9ac84-a77ef1de.mp4"}
             type='video/mp4'
           />
         </video>
@@ -58,7 +58,7 @@ const CombinedAnimations: React.FC = () => {
         animationStartYValue={3500}
         animationEndYValue={5000}
         maxClipPathSize={1050}
-        maskImage={"url(./public/assets/images/common/alien.svg)"}
+        maskImage={"url(/assets/images/common/alien.svg)"}
         animationDirection='reveal'
         className='z-50'
       >
@@ -71,7 +71,7 @@ const CombinedAnimations: React.FC = () => {
         />
         <video autoPlay muted loop width='100%'>
           <source
-            src={"./public/assets/videos/abf9ac84-a77ef1de.mp4"}
+            src={"/assets/videos/abf9ac84-a77ef1de.mp4"}
             type='video/mp4'
           />
         </video>

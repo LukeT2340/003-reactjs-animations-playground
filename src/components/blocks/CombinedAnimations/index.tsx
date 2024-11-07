@@ -33,7 +33,7 @@ const CombinedAnimations: React.FC = () => {
           className='text-[200px] leading-[300px] text-white uppercase font-bold ease-out font-anton tracking-[10px]'
         />
         <video autoPlay muted loop width='100%'>
-          <source src={"/abf9ac84-a77ef1de.mp4"} type='video/mp4' />
+          <source src={"./abf9ac84-a77ef1de.mp4"} type='video/mp4' />
         </video>
       </ClipPathAnimation>
       <TextAnimationWithScroll
@@ -66,7 +66,7 @@ const CombinedAnimations: React.FC = () => {
           className='text-[250px] leading-[300px] text-emerald-200 uppercase font-bold ease-out font-anton tracking-[10px]'
         />
         <video autoPlay muted loop width='100%'>
-          <source src={"/abf9ac84-a77ef1de.mp4"} type='video/mp4' />
+          <source src={"./abf9ac84-a77ef1de.mp4"} type='video/mp4' />
         </video>
       </ClipPathAnimation>
     </section>

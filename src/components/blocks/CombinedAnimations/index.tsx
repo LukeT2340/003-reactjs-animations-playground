@@ -2,7 +2,7 @@
 
 import ClipPathAnimation from "../../miscellaneous/ClipPathAnimation"
 import TextAnimationWithScroll from "../../miscellaneous/TextAnimationWithScroll"
-import video from "../../../../public/assets/abf9ac84-a77ef1de.mp4"
+import video from "../../../../public/assets/video.mp4"
 import { images } from "../../../../public/assets/data/slides"
 import ImageGalleryAnimation from "../../miscellaneous/ImageGalleryAnimation"
 

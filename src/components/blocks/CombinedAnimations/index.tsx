@@ -3,7 +3,6 @@
 import ClipPathAnimation from "../../miscellaneous/ClipPathAnimation"
 import TextAnimationWithScroll from "../../miscellaneous/TextAnimationWithScroll"
 // import video from "./src/a"
-import video from "../../../../public/assets/videos/abf9ac84-a77ef1de.mp4"
 import { images } from "../../../../public/assets/data/slides"
 import ImageGalleryAnimation from "../../miscellaneous/ImageGalleryAnimation"
 
@@ -34,7 +33,10 @@ const CombinedAnimations: React.FC = () => {
           className='text-[200px] leading-[300px] text-white uppercase font-bold ease-out font-anton tracking-[10px]'
         />
         <video autoPlay muted loop width='100%'>
-          <source src={video} type='video/mp4' />
+          <source
+            src={"/assets/videos/abf9ac84-a77ef1de.mp4"}
+            type='video/mp4'
+          />
         </video>
       </ClipPathAnimation>
       <TextAnimationWithScroll
@@ -67,7 +69,10 @@ const CombinedAnimations: React.FC = () => {
           className='text-[250px] leading-[300px] text-emerald-200 uppercase font-bold ease-out font-anton tracking-[10px]'
         />
         <video autoPlay muted loop width='100%'>
-          <source src={video} type='video/mp4' />
+          <source
+            src={"/assets/videos/abf9ac84-a77ef1de.mp4"}
+            type='video/mp4'
+          />
         </video>
       </ClipPathAnimation>
     </section>

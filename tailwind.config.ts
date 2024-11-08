@@ -9,6 +9,7 @@ export default {
       },
       fontFamily: {
         lato: ["Lato", "sans-serif"],
+        drukWide: ["DrukWide"],
         wetPaint: ["WetPaint"],
         anton: ["Anton"],
       },

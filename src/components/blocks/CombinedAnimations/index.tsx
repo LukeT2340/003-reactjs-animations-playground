@@ -23,28 +23,28 @@ const CombinedAnimations: React.FC = () => {
           animationStartYValue={0}
           animationEndYValue={800 / 2}
           top={"10vh"}
-          className='text-[90px] leading-[80px] text-white uppercase font-bold ease-out tracking-[10px]'
+          className='text-[3vw] leading-[3vw] text-white uppercase font-drukWide font-bold ease-out tracking-[10px]'
         />
         <TextAnimationWithScroll
           text='and'
           animationStartYValue={1000 / 2}
           animationEndYValue={1800 / 2}
           top={"20vh"}
-          className='text-[100px] leading-[80px] text-white uppercase font-bold ease-out tracking-[10px]'
+          className='text-[3vw] leading-[3vw] text-white font-drukWide uppercase font-bold ease-out tracking-[10px]'
         />
         <TextAnimationWithScroll
           text='Hide sections'
           animationStartYValue={2000 / 2}
           animationEndYValue={2800 / 2}
           top={"30vh"}
-          className='text-[200px] leading-[300px] text-white uppercase font-bold ease-out font-anton tracking-[10px]'
+          className='text-[5vw] leading-[5vw] text-white uppercase font-bold ease-out font-drukWide tracking-[10px]'
         />
         <TextAnimationWithScroll
           text='on scroll'
           animationStartYValue={3000 / 2}
           animationEndYValue={3800 / 2}
           top={"50vh"}
-          className='text-[200px] leading-[300px] text-white uppercase font-bold ease-out font-anton tracking-[10px]'
+          className='text-[5vw] leading-[5vw] text-white uppercase font-bold ease-out font-drukWide tracking-[10px]'
         />
         <video
           autoPlay
@@ -61,21 +61,21 @@ const CombinedAnimations: React.FC = () => {
         animationStartYValue={5000 / 2}
         animationEndYValue={5800 / 2}
         top={"10vh"}
-        className='text-[150px] leading-[150px] text-emerald-200 uppercase font-bold ease-out font-anton tracking-[10px]'
+        className='text-[5vw] leading-[5vw] text-emerald-200 uppercase font-bold ease-out font-drukWide tracking-[10px]'
       />
       <TextAnimationWithScroll
         text='on scroll'
         animationStartYValue={6000 / 2}
         animationEndYValue={6800 / 2}
         top={"30vh"}
-        className='text-[150px] leading-[150px] text-emerald-200 uppercase font-bold ease-out font-anton tracking-[10px]'
+        className='text-[5vw] leading-[5vw] text-emerald-200 uppercase font-bold ease-out font-drukWide tracking-[10px]'
       />
       <TextAnimationWithScroll
         text='using any shape'
         animationStartYValue={7000 / 2}
         animationEndYValue={7800 / 2}
         top={"50vh"}
-        className='text-[150px] leading-[150px] text-emerald-200 uppercase font-bold ease-out font-anton tracking-[10px]'
+        className='text-[5vw] leading-[5vw] text-emerald-200 uppercase font-bold ease-out font-drukWide tracking-[10px]'
       />
       <ClipPathAnimation
         animationStartYValue={9000 / 2}
@@ -89,15 +89,15 @@ const CombinedAnimations: React.FC = () => {
           text='Animate images'
           animationStartYValue={12500 / 2}
           animationEndYValue={13300 / 2}
-          top={"5vh"}
-          className='text-[150px] leading-[150px] text-white uppercase font-bold ease-out font-anton tracking-[10px]'
+          top={"15vh"}
+          className='text-[5vw] leading-[5vw] text-white uppercase font-bold ease-out font-drukWide tracking-[10px]'
         />
         <TextAnimationWithScroll
           text='on scroll'
           animationStartYValue={13500 / 2}
           animationEndYValue={14300 / 2}
           top={"25vh"}
-          className='text-[150px] leading-[150px] text-white uppercase font-bold ease-out font-anton tracking-[10px]'
+          className='text-[5vw] leading-[5vw] text-white uppercase font-bold ease-out font-drukWide tracking-[10px]'
         />
         <ImageGalleryAnimation
           images={images}

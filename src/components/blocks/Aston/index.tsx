@@ -19,7 +19,7 @@ const Aston: React.FC = () => {
         transition={{ duration: 0.8, delay: 0.2, ease: "easeInOut" }}
       >
         <div className='relative w-full h-full'>
-          <div className='absolute left-[10vw] bottom-[10vh] text-[95px] leading-[105px] text-white font-domain z-30'>
+          <div className='absolute left-[20vw] bottom-[2vh] text-[95px] leading-[105px] text-white font-domain z-30'>
             <motion.h1
               initial={{
                 y: 150,

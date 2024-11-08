@@ -5,6 +5,7 @@ interface TextAnimationWithScrollProps {
   animationStartYValue: number // Pixel value
   animationEndYValue: number // Pixel value
   top: string
+  translateX?: string
   className?: string
 }
 
@@ -13,10 +14,11 @@ export const TextAnimationWithScroll = ({
   animationStartYValue,
   animationEndYValue,
   top,
+  translateX,
   className,
 }: TextAnimationWithScrollProps) => {
   // Higher values give more easeOut.
-  const ease = 2.5
+  const ease = 0.3
 
   // Initially translated by this value
   const initial = 100
@@ -40,12 +42,18 @@ export const TextAnimationWithScroll = ({
       for (const element of headingElements) {
         const htmlElement = element as HTMLElement
         const b = ((-1 / (index + 1)) * Math.log(1 / initial)) / Math.log(ease)
-        const y = initial * ease ** (-b * (index + 1) * x)
+        const y = initial * ease ** (-b * (index + 1) * x) * (index + 1)
+        // const y = initial * ease ** (-b * (index + 1) * x)
         htmlElement.style.transform = `translateY(${(index + 1) * y}%)`
         index++
       }
     }
   }
+
+  // y=m*ease^(-b*(index+1)*x)
+  // x=0.5, y = 0.1
+  // 0.1=m*ease^(-b*(index+1)*0.5)
+  // b = -2/((index+1))*log(0.1/m)/log(ease)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,7 +73,10 @@ export const TextAnimationWithScroll = ({
   }, [])
 
   return (
-    <div className='fixed z-20 w-full' style={{ top }}>
+    <div
+      className='fixed z-20 w-screen'
+      style={{ top, transform: `translateX(${translateX})` }}
+    >
       <div
         className='heading-container overflow-hidden flex justify-center'
         ref={containerRef}

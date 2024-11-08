@@ -1,4 +1,6 @@
 import { useRef, useEffect } from "react"
+import TextAnimationWithScroll from "./TextAnimationWithScroll"
+import { motion } from "framer-motion"
 
 interface ImageGalleryAnimationProps {
   images: string[]
@@ -94,13 +96,20 @@ const SingleImageAnimation: React.FC<SingleImageAnimationProps> = ({
   }, [])
 
   return (
-    <div className='absolute left-1/2 -translate-x-1/2'>
+    <div className='absolute left-1/2 -translate-x-1/2 '>
       <div className='flex justify-center w-full'>
         <div
           ref={imageRef}
           style={{ transform: `translate(-50%,${initialTranslateY}%)` }}
+          className='overflow-hidden'
         >
-          <img src={image} alt='motion image' className={className} />
+          <motion.div
+            initial={{ scale: 1.2 }}
+            whileInView={{ scale: 1 }}
+            transition={{ duration: 2, delay: 0.2, ease: "easeOut" }}
+          >
+            <img src={image} alt='motion image' className={className} />
+          </motion.div>
         </div>
       </div>
     </div>

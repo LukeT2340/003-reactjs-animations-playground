@@ -3,13 +3,14 @@ import FramerMotionScroll from "../../miscellaneous/FramerMotionScroll"
 import one from "../../../../public/assets/images/desktop/hero-parallax-1.png"
 import two from "../../../../public/assets/images/desktop/hero-parallax-2.png"
 import three from "../../../../public/assets/images/desktop/hero-parallax-3.jpg"
+import ImageWithCursorParallax from "../../miscellaneous/ImageWithCursorParallax"
 
 const Aston: React.FC = () => {
   return (
-    <section className='aston relative h-[3000px] z-10 bg-[#185444]'>
+    <section className='aston relative h-[5000px] z-10 bg-[#185444]'>
       <FramerMotionScroll
         animationStartYValue={17000}
-        animationEndYValue={30000}
+        animationEndYValue={20000}
         initial={{ clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)" }}
         animate={{
           clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
@@ -70,7 +71,6 @@ const Aston: React.FC = () => {
             }}
             exit={{
               scale: 1.3,
-              opacity: 0,
             }}
             transition={{ duration: 1.4, delay: 0.2, ease: "easeInOut" }}
           >
@@ -86,10 +86,10 @@ const Aston: React.FC = () => {
             }}
             exit={{
               scale: 1.4,
-              opacity: 0,
             }}
             transition={{ duration: 1.4, delay: 0.2, ease: "easeInOut" }}
           >
+            <ImageWithCursorParallax image={two} />
             <img src={two} alt='none' className='w-full h-full' />
           </motion.div>
           <motion.div
@@ -102,7 +102,6 @@ const Aston: React.FC = () => {
             }}
             exit={{
               scale: 1.2,
-              opacity: 0,
             }}
             transition={{ duration: 1.4, delay: 0.2, ease: "easeInOut" }}
           >

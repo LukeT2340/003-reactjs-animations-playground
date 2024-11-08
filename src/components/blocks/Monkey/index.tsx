@@ -7,6 +7,7 @@ import { images } from "../../../../public/assets/data/slides"
 import ImageGalleryAnimation from "../../miscellaneous/ImageGalleryAnimation"
 import ImageAnimation from "../../miscellaneous/ImageAnimation"
 import monkey from "../../../../public/assets/images/monkey.png"
+import FramerMotionScroll from "../../miscellaneous/FramerMotionScroll"
 
 const Monkey: React.FC = () => {
   // scroll((progress) => console.log("Progress: ", progress)) If I were to do this again I'd use this to track how far we are through the webpage as opposed to window.scrollY
@@ -121,6 +122,22 @@ const Monkey: React.FC = () => {
           top={"25vh"}
           className='text-[5vw] leading-[5vw] text-white uppercase font-bold ease-out font-drukWide tracking-[10px]'
         /> */}
+        <FramerMotionScroll
+          animationStartYValue={7000}
+          animationEndYValue={13000}
+          initial={{
+            clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
+          }}
+          animate={{
+            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+          }}
+          exit={{ clipPath: "polygon(0 0, 100% 0, 100% 0, 0% 0)" }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeInOut" }}
+        >
+          <h1 className='text-white text-[40px] leading-[50px] font-drukWide'>
+            test
+          </h1>
+        </FramerMotionScroll>
         <ImageGalleryAnimation
           images={images}
           animationStartYValue={7000}

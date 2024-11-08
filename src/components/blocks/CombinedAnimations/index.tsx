@@ -5,6 +5,8 @@ import TextAnimationWithScroll from "../../miscellaneous/TextAnimationWithScroll
 import video from "../../../../public/assets/video.mp4"
 import { images } from "../../../../public/assets/data/slides"
 import ImageGalleryAnimation from "../../miscellaneous/ImageGalleryAnimation"
+import ImageAnimation from "../../miscellaneous/ImageAnimation"
+import monkey from "../../../../public/assets/images/monkey.png"
 
 const CombinedAnimations: React.FC = () => {
   // scroll((progress) => console.log("Progress: ", progress)) If I were to do this again I'd use this to track how far we are through the webpage as opposed to window.scrollY
@@ -56,25 +58,31 @@ const CombinedAnimations: React.FC = () => {
           <source src={video} type='video/mp4' />
         </video>
       </ClipPathAnimation>
+      <ImageAnimation
+        image={monkey}
+        animationStartYValue={5400 / 2}
+        animationEndYValue={6000 / 2}
+        className='w-[70vw]'
+      />
       <TextAnimationWithScroll
-        text='Or reveal sections'
+        text='Or reveal new'
         animationStartYValue={5000 / 2}
         animationEndYValue={5800 / 2}
-        top={"10vh"}
+        top={"50vh"}
         className='text-[5vw] leading-[5vw] text-emerald-200 uppercase font-bold ease-out font-drukWide tracking-[10px]'
       />
       <TextAnimationWithScroll
-        text='on scroll'
+        text='sections on scroll'
         animationStartYValue={6000 / 2}
         animationEndYValue={6800 / 2}
-        top={"20vh"}
+        top={"60vh"}
         className='text-[5vw] leading-[5vw] text-emerald-200 uppercase font-bold ease-out font-drukWide tracking-[10px]'
       />
       <TextAnimationWithScroll
         text='using any shape'
         animationStartYValue={7000 / 2}
         animationEndYValue={7800 / 2}
-        top={"30vh"}
+        top={"70vh"}
         className='text-[5vw] leading-[5vw] text-emerald-200 uppercase font-bold ease-out font-drukWide tracking-[10px]'
       />
       <ClipPathAnimation

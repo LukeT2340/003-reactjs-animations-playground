@@ -56,8 +56,8 @@ const SingleImageAnimation: React.FC<SingleImageAnimationProps> = ({
   const initialTranslateY = 150
   useEffect(() => {
     const handleScroll = () => {
-      const ease = 1.04
-      const animationDistribution = 0.7 // 0.5 means that the part of the animation where the image rises to the center of the screen will take up 50% of the animation, and the part where the image shrinks will take up 50% as well
+      const ease = 0.5
+      const animationDistribution = 0.5 // 0.5 means that the part of the animation where the image rises to the center of the screen will take up 50% of the animation, and the part where the image shrinks will take up 50% as well
 
       if (imageRef.current) {
         // Take scroll value and transform it to be between 0 and 1. 0 is start of animation and 1 is end of animation

@@ -104,7 +104,7 @@ const CombinedAnimations: React.FC = () => {
           animationStartYValue={15500 / 2}
           animationEndYValue={18000}
           top={"45vh"}
-          className='h-[50vh]'
+          className='w-[40vw]'
         />
         <video
           autoPlay

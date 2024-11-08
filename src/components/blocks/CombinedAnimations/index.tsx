@@ -43,7 +43,7 @@ const CombinedAnimations: React.FC = () => {
           text='on scroll'
           animationStartYValue={3000 / 2}
           animationEndYValue={3800 / 2}
-          top={"50vh"}
+          top={"40vh"}
           className='text-[5vw] leading-[5vw] text-white uppercase font-bold ease-out font-drukWide tracking-[10px]'
         />
         <video
@@ -67,14 +67,14 @@ const CombinedAnimations: React.FC = () => {
         text='on scroll'
         animationStartYValue={6000 / 2}
         animationEndYValue={6800 / 2}
-        top={"30vh"}
+        top={"20vh"}
         className='text-[5vw] leading-[5vw] text-emerald-200 uppercase font-bold ease-out font-drukWide tracking-[10px]'
       />
       <TextAnimationWithScroll
         text='using any shape'
         animationStartYValue={7000 / 2}
         animationEndYValue={7800 / 2}
-        top={"50vh"}
+        top={"30vh"}
         className='text-[5vw] leading-[5vw] text-emerald-200 uppercase font-bold ease-out font-drukWide tracking-[10px]'
       />
       <ClipPathAnimation

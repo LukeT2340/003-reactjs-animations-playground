@@ -13,13 +13,13 @@ const App = () => {
     <>
       <div>
         <main>
-          <Header />
+          {/* <Header /> */}
           <article>
             <LocomotiveParallax locoScrollRef={locoScrollRef}>
               <CombinedAnimations />
             </LocomotiveParallax>
           </article>
-          <Footer />
+          {/* <Footer /> */}
         </main>
       </div>
     </>

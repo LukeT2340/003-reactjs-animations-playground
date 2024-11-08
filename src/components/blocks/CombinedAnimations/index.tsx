@@ -12,7 +12,7 @@ const CombinedAnimations: React.FC = () => {
   // scroll((progress) => console.log("Progress: ", progress)) If I were to do this again I'd use this to track how far we are through the webpage as opposed to window.scrollY
 
   return (
-    <section className='section-combined-aniamtion h-[19500px] w-screen bg-black relative -z-0'>
+    <section className='section-combined-aniamtion h-[8500px] w-screen bg-black relative -z-0'>
       <ClipPathAnimation
         animationStartYValue={5500 / 2}
         animationEndYValue={7000 / 2}
@@ -94,6 +94,20 @@ const CombinedAnimations: React.FC = () => {
         className='z-50 w-full'
       >
         <TextAnimationWithScroll
+          text='Work in progress!'
+          animationStartYValue={12500 / 2}
+          animationEndYValue={13300 / 2}
+          top={"15vh"}
+          className='text-[5vw] leading-[5vw] text-white uppercase font-bold ease-out font-drukWide tracking-[10px]'
+        />
+        <TextAnimationWithScroll
+          text='Let us know what other animations we should try and replicate!'
+          animationStartYValue={13000 / 2}
+          animationEndYValue={13700 / 2}
+          top={"25vh"}
+          className='text-[1vw] leading-[1vw] text-white font-bold ease-out font-drukWide tracking-[10px]'
+        />
+        {/* <TextAnimationWithScroll
           text='Animate images'
           animationStartYValue={12500 / 2}
           animationEndYValue={13300 / 2}
@@ -113,7 +127,7 @@ const CombinedAnimations: React.FC = () => {
           animationEndYValue={18000}
           top={"45vh"}
           className='w-[40vw]'
-        />
+        /> */}
         <video
           autoPlay
           muted

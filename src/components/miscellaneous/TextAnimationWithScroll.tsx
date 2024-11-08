@@ -18,7 +18,7 @@ export const TextAnimationWithScroll = ({
   className,
 }: TextAnimationWithScrollProps) => {
   // Higher values give more easeOut.
-  const ease = 0.99
+  const ease = 1.6
 
   // Initially translated by this value
   const initial = 100
@@ -26,7 +26,7 @@ export const TextAnimationWithScroll = ({
   const containerRef = useRef<HTMLDivElement>(null)
 
   const handleContainerTransform = (x: number) => {
-    const b = -Math.log(1 / initial) / Math.log(ease)
+    const b = (-0.1 * Math.log(0.1 / initial)) / Math.log(ease)
     const y = initial * ease ** (-b * x)
 
     if (containerRef.current) {

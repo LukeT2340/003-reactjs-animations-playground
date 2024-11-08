@@ -12,6 +12,7 @@ export default {
         drukWide: ["DrukWide"],
         wetPaint: ["WetPaint"],
         anton: ["Anton"],
+        domain: ["Domain"],
       },
 
       fontSize: {

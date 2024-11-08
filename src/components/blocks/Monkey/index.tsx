@@ -8,11 +8,11 @@ import ImageGalleryAnimation from "../../miscellaneous/ImageGalleryAnimation"
 import ImageAnimation from "../../miscellaneous/ImageAnimation"
 import monkey from "../../../../public/assets/images/monkey.png"
 
-const CombinedAnimations: React.FC = () => {
+const Monkey: React.FC = () => {
   // scroll((progress) => console.log("Progress: ", progress)) If I were to do this again I'd use this to track how far we are through the webpage as opposed to window.scrollY
 
   return (
-    <section className='section-combined-aniamtion h-[16500px] w-screen bg-black relative -z-0'>
+    <section className='section-combined-animation h-[16500px] w-screen bg-black relative -z-10'>
       <ClipPathAnimation
         animationStartYValue={5500 / 2}
         animationEndYValue={7000 / 2}
@@ -149,4 +149,4 @@ const CombinedAnimations: React.FC = () => {
   )
 }
 
-export default CombinedAnimations
+export default Monkey

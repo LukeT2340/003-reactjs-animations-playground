@@ -1,10 +1,7 @@
 import { useRef } from "react"
-import TextAnimateWithScroll from "./components/blocks/TextAnimateWithScroll"
-import ClipPathAnimation from "./components/blocks/ClipPathAnimation"
-import CombinedAnimations from "./components/blocks/CombinedAnimations/index.tsx"
+import Monkey from "./components/blocks/Monkey/index.tsx"
 import LocomotiveParallax from "./js/parallax"
-import Header from "./components/blocks/Header/Header.tsx"
-import Footer from "./components/blocks/Footer/Footer.tsx"
+import Aston from "./components/blocks/Aston/index.tsx"
 
 const App = () => {
   const locoScrollRef = useRef<HTMLElement>(null)
@@ -16,7 +13,8 @@ const App = () => {
           {/* <Header /> */}
           <article>
             <LocomotiveParallax locoScrollRef={locoScrollRef}>
-              <CombinedAnimations />
+              <Monkey />
+              <Aston />
             </LocomotiveParallax>
           </article>
           {/* <Footer /> */}

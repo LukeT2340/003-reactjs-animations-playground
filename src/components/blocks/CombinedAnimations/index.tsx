@@ -94,7 +94,7 @@ const CombinedAnimations: React.FC = () => {
         className='z-50 w-full'
       >
         <TextAnimationWithScroll
-          text='This effect is a'
+          text='Image Gallery'
           animationStartYValue={12500 / 2}
           animationEndYValue={13300 / 2}
           top={"15vh"}
@@ -105,7 +105,7 @@ const CombinedAnimations: React.FC = () => {
           animationStartYValue={13000 / 2}
           animationEndYValue={13800 / 2}
           top={"25vh"}
-          className='text-[5vw] leading-[5vw] text-white uppercase font-bold ease-out font-drukWide tracking-[10px]'
+          className='text-[2vw] leading-[2vw] text-white uppercase font-bold ease-out font-drukWide tracking-[10px]'
         />
         {/* <TextAnimationWithScroll
           text='Animate images'

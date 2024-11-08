@@ -123,7 +123,7 @@ const CombinedAnimations: React.FC = () => {
         /> */}
         <ImageGalleryAnimation
           images={images}
-          animationStartYValue={15500 / 2}
+          animationStartYValue={7000}
           animationEndYValue={13000}
           top={"35vh"}
           className='w-[40vw]'

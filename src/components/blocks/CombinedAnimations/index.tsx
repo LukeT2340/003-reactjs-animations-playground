@@ -10,10 +10,10 @@ const CombinedAnimations: React.FC = () => {
   // scroll((progress) => console.log("Progress: ", progress)) If I were to do this again I'd use this to track how far we are through the webpage as opposed to window.scrollY
 
   return (
-    <section className='section-combined-aniamtion h-[20500px] w-screen bg-black relative -z-0'>
+    <section className='section-combined-aniamtion h-[22500px] w-screen bg-black relative -z-0'>
       <ClipPathAnimation
-        animationStartYValue={4000}
-        animationEndYValue={5500}
+        animationStartYValue={5500}
+        animationEndYValue={7000}
         maxClipPathSize={100}
         maskImage={"url(/assets/images/common/triangle.svg)"}
         animationDirection='hide'
@@ -27,22 +27,22 @@ const CombinedAnimations: React.FC = () => {
         />
         <TextAnimationWithScroll
           text='and'
-          animationStartYValue={800}
-          animationEndYValue={1600}
+          animationStartYValue={1000}
+          animationEndYValue={1800}
           top={"20vh"}
           className='text-[100px] leading-[80px] text-white uppercase font-bold ease-out tracking-[10px]'
         />
         <TextAnimationWithScroll
           text='Hide sections'
-          animationStartYValue={1600}
-          animationEndYValue={2400}
+          animationStartYValue={2000}
+          animationEndYValue={2800}
           top={"30vh"}
           className='text-[200px] leading-[300px] text-white uppercase font-bold ease-out font-anton tracking-[10px]'
         />
         <TextAnimationWithScroll
           text='on scroll'
-          animationStartYValue={2000}
-          animationEndYValue={2800}
+          animationStartYValue={3000}
+          animationEndYValue={3800}
           top={"50vh"}
           className='text-[200px] leading-[300px] text-white uppercase font-bold ease-out font-anton tracking-[10px]'
         />
@@ -58,28 +58,28 @@ const CombinedAnimations: React.FC = () => {
       </ClipPathAnimation>
       <TextAnimationWithScroll
         text='Or reveal sections'
-        animationStartYValue={5500}
-        animationEndYValue={6000}
+        animationStartYValue={5000}
+        animationEndYValue={5800}
         top={"10vh"}
         className='text-[150px] leading-[150px] text-emerald-200 uppercase font-bold ease-out font-anton tracking-[10px]'
       />
       <TextAnimationWithScroll
         text='on scroll'
         animationStartYValue={6000}
-        animationEndYValue={6500}
+        animationEndYValue={6800}
         top={"30vh"}
         className='text-[150px] leading-[150px] text-emerald-200 uppercase font-bold ease-out font-anton tracking-[10px]'
       />
       <TextAnimationWithScroll
         text='using any shape'
-        animationStartYValue={6500}
-        animationEndYValue={7000}
+        animationStartYValue={7000}
+        animationEndYValue={7800}
         top={"50vh"}
         className='text-[150px] leading-[150px] text-emerald-200 uppercase font-bold ease-out font-anton tracking-[10px]'
       />
       <ClipPathAnimation
-        animationStartYValue={6500}
-        animationEndYValue={9000}
+        animationStartYValue={9000}
+        animationEndYValue={12500}
         maxClipPathSize={1050}
         maskImage={"url(/assets/images/common/alien.svg)"}
         animationDirection='reveal'
@@ -87,24 +87,24 @@ const CombinedAnimations: React.FC = () => {
       >
         <TextAnimationWithScroll
           text='Animate images'
-          animationStartYValue={9000}
-          animationEndYValue={9500}
+          animationStartYValue={12500}
+          animationEndYValue={13300}
           top={"5vh"}
           className='text-[150px] leading-[150px] text-white uppercase font-bold ease-out font-anton tracking-[10px]'
         />
         <TextAnimationWithScroll
           text='on scroll'
-          animationStartYValue={10000}
-          animationEndYValue={10500}
+          animationStartYValue={13500}
+          animationEndYValue={14300}
           top={"25vh"}
           className='text-[150px] leading-[150px] text-white uppercase font-bold ease-out font-anton tracking-[10px]'
         />
         <ImageGalleryAnimation
           images={images}
-          animationStartYValue={11000}
-          animationEndYValue={19000}
+          animationStartYValue={15500}
+          animationEndYValue={21000}
           top={"45vh"}
-          className='w-[35vw]'
+          className='h-[50vh]'
         />
         <video
           autoPlay

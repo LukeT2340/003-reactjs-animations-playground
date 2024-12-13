@@ -8,6 +8,8 @@ export default {
         "dark-blue": "#192958",
         blue: "#002bff",
         "light-gray": "#efefef",
+        yellow: "#ffef5b",
+        red: "#ff2500",
       },
       fontFamily: {
         lato: ["Lato", "sans-serif"],

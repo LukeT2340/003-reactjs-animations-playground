@@ -31,7 +31,7 @@ const AboutText: React.FC = () => {
           <motion.div
             initial={{ y: 0 }}
             animate={hasAnimatedTwo ? { y: -150 } : { y: 0 }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
           >
             <motion.h6
               initial={{ opacity: 0 }}
@@ -52,7 +52,7 @@ const AboutText: React.FC = () => {
               animate={
                 hasAnimatedTwo ? { y: 0, opacity: 1 } : { y: 150, opacity: 0 }
               }
-              transition={{ duration: 1.5, ease: "easeInOut" }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
               className='bg-light-gray p-11 rounded-[24px]'
             >
               <h6 className='text-[24px] leading-[26px] font-bold max-w-[540px] ml-4'>

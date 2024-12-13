@@ -28,13 +28,13 @@ const Phone: React.FC = () => {
       >
         <motion.div
           initial={{ x: 0 }}
-          animate={hasAnimatedTwo ? { x: -300 } : { x: 0 }}
+          animate={hasAnimatedTwo ? { x: -400 } : { x: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
         >
           <motion.img
             src='/assets/images/PlayFora/65c38484e3832bde771a2052_phone.png'
             alt='skateboards'
-            className='object-cover w-[350px]'
+            className='object-cover w-[400px]'
             initial={{ opacity: 0, y: 600 }}
             animate={
               hasAnimatedOne ? { opacity: 1, y: 0 } : { opacity: 0, y: 600 }

@@ -34,7 +34,7 @@ const Phone: React.FC = () => {
           <motion.img
             src='/assets/images/PlayFora/65c38484e3832bde771a2052_phone.png'
             alt='skateboards'
-            className='object-cover w-[20vw]'
+            className='object-cover w-[25vw]'
             initial={{ opacity: 0, y: 600 }}
             animate={
               hasAnimatedOne ? { opacity: 1, y: 0 } : { opacity: 0, y: 600 }

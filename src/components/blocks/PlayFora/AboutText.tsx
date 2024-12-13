@@ -11,8 +11,8 @@ const AboutText: React.FC = () => {
     const handleScroll = debounce(() => {
       const scrollY = window.scrollY
       setHasAnimatedOne(scrollY > 450)
-      setHasAnimatedTwo(scrollY > 850)
-      setHasAnimatedThree(scrollY > 1350)
+      setHasAnimatedTwo(scrollY > 1000)
+      setHasAnimatedThree(scrollY > 1450)
     }, 0)
 
     window.addEventListener("scroll", handleScroll)

@@ -16,7 +16,7 @@ const PlayFora: React.FC = () => {
   useEffect(() => {
     const handleScroll = debounce(() => {
       const scrollY = window.scrollY
-      setBackgroundHasAnimatedOne(scrollY > 1350)
+      setBackgroundHasAnimatedOne(scrollY > 1850)
       setBackgroundHasAnimatedTwo(scrollY > 3050)
     }, 0)
 

@@ -12,7 +12,7 @@ const Phone: React.FC = () => {
       const scrollY = window.scrollY
       setHasAnimatedOne(scrollY > 10)
       setHasAnimatedTwo(scrollY > 450)
-      setHasAnimatedThree(scrollY > 1450)
+      setHasAnimatedThree(scrollY > 1850)
     }, 0)
 
     window.addEventListener("scroll", handleScroll)

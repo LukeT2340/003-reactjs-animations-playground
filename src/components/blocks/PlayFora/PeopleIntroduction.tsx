@@ -10,7 +10,7 @@ const PeopleIntroduction: React.FC = () => {
   useEffect(() => {
     const handleScroll = debounce(() => {
       const scrollY = window.scrollY
-      setHasAnimatedOne(scrollY > 1450)
+      setHasAnimatedOne(scrollY > 1850)
       setHasAnimatedTwo(scrollY > 2150)
       setHasAnimatedThree(scrollY > 3050)
     }, 0)

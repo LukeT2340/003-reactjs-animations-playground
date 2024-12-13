@@ -12,7 +12,7 @@ const AboutText: React.FC = () => {
       const scrollY = window.scrollY
       setHasAnimatedOne(scrollY > 450)
       setHasAnimatedTwo(scrollY > 1000)
-      setHasAnimatedThree(scrollY > 1450)
+      setHasAnimatedThree(scrollY > 1850)
     }, 0)
 
     window.addEventListener("scroll", handleScroll)

@@ -12,7 +12,7 @@ const Phone: React.FC = () => {
       const scrollY = window.scrollY
       setHasAnimatedOne(scrollY > 10)
       setHasAnimatedTwo(scrollY > 450)
-      setHasAnimatedThree(scrollY > 1350)
+      setHasAnimatedThree(scrollY > 1450)
     }, 0)
 
     window.addEventListener("scroll", handleScroll)
@@ -23,18 +23,18 @@ const Phone: React.FC = () => {
     <div className='absolute -bottom-0 left-1/2 -translate-x-1/2 z-10'>
       <motion.div
         initial={{ y: 0 }}
-        animate={hasAnimatedThree ? { y: -1000 } : { y: 0 }}
+        animate={hasAnimatedThree ? { y: "-100vh" } : { y: 0 }}
         transition={{ duration: 0.8, ease: "easeInOut" }}
       >
         <motion.div
           initial={{ x: 0 }}
-          animate={hasAnimatedTwo ? { x: -400 } : { x: 0 }}
+          animate={hasAnimatedTwo ? { x: "-20vw" } : { x: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
         >
           <motion.img
             src='/assets/images/PlayFora/65c38484e3832bde771a2052_phone.png'
             alt='skateboards'
-            className='object-cover w-[400px]'
+            className='object-cover w-[20vw]'
             initial={{ opacity: 0, y: 600 }}
             animate={
               hasAnimatedOne ? { opacity: 1, y: 0 } : { opacity: 0, y: 600 }

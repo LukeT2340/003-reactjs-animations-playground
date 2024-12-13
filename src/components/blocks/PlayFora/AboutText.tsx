@@ -25,12 +25,12 @@ const AboutText: React.FC = () => {
         <motion.div
           className='block-copy max-w-[600px]'
           initial={{ y: 0 }}
-          animate={hasAnimatedThree ? { y: -1000 } : { y: 0 }}
+          animate={hasAnimatedThree ? { y: "-100vh" } : { y: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
         >
           <motion.div
             initial={{ y: 0 }}
-            animate={hasAnimatedTwo ? { y: -150 } : { y: 0 }}
+            animate={hasAnimatedTwo ? { y: -250 } : { y: 0 }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
           >
             <motion.h6

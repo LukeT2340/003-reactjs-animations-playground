@@ -8,12 +8,16 @@ import debounce from "lodash.debounce"
 import PeopleIntroduction from "./PeopleIntroduction"
 
 const PlayFora: React.FC = () => {
-  const [backgroundHasAnimated, setBackgroundHasAnimated] = useState(false)
+  const [backgroundHasAnimatedOne, setBackgroundHasAnimatedOne] =
+    useState(false)
+  const [backgroundHasAnimatedTwo, setBackgroundHasAnimatedTwo] =
+    useState(false)
 
   useEffect(() => {
     const handleScroll = debounce(() => {
       const scrollY = window.scrollY
-      setBackgroundHasAnimated(scrollY > 1350)
+      setBackgroundHasAnimatedOne(scrollY > 1350)
+      setBackgroundHasAnimatedTwo(scrollY > 3050)
     }, 0)
 
     window.addEventListener("scroll", handleScroll)
@@ -22,15 +26,17 @@ const PlayFora: React.FC = () => {
 
   return (
     <motion.section
-      className='h-[550vh] relative'
+      className='h-[5000px] relative'
       initial={{ backgroundColor: "rgb(0, 0, 0)" }}
       animate={
-        backgroundHasAnimated
-          ? { backgroundColor: "rgb(0, 0 , 0)" }
+        backgroundHasAnimatedOne
+          ? backgroundHasAnimatedTwo
+            ? { backgroundColor: "rgb(0 43 255)" }
+            : { backgroundColor: "rgb(0, 0 , 0)" }
           : { backgroundColor: "rgb(243, 244, 246)" }
       }
       transition={{
-        duration: backgroundHasAnimated ? 0.5 : 4,
+        duration: backgroundHasAnimatedOne ? 0.5 : 4,
         delay: 0,
         ease: [0.42, 0, 0.58, 1],
       }}

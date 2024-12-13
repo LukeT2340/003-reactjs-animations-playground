@@ -7,9 +7,9 @@
  */
 
 html {
-  box-sizing: border-box;
-  font-size: $rem-base;
-  scroll-behavior: smooth;
+	box-sizing: border-box;
+	font-size: $rem-base;
+	scroll-behavior: smooth;
 }
 
 /**
@@ -22,7 +22,7 @@ html {
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 /**
@@ -30,11 +30,17 @@ html {
  */
 
 body {
-  @include font-opentype;
-  @include font-smoothing;
-  font-family: "ProximaNova", Arial, Helvetica, sans-serif;
-  font-size: 1.6rem;
-  font-weight: normal;
-  line-height: 2em;
-  text-wrap: balance;
+	@include font-opentype;
+	@include font-smoothing;
+	font-family: "ProximaNova", Arial, Helvetica, sans-serif;
+	font-size: 17.3px;
+	font-weight: normal;
+	line-height: 19px;
+	text-wrap: balance;
+
+	.block-copy {
+		p:last-of-type {
+			padding-bottom: 0;
+		}
+	}
 }

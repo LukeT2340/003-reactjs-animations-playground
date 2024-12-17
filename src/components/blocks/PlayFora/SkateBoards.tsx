@@ -8,7 +8,7 @@ const SkateBoards: React.FC = () => {
   useEffect(() => {
     const handleScroll = debounce(() => {
       const scrollY = window.scrollY
-      setHasAnimated(scrollY > 40)
+      setHasAnimated(scrollY > 10)
     }, 0)
 
     window.addEventListener("scroll", handleScroll)

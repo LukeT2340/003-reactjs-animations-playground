@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import debounce from "lodash.debounce"
 
-const PeopleIntroduction: React.FC = () => {
+const PeopleIntroductionCards: React.FC = () => {
   const [hasAnimatedOne, setHasAnimatedOne] = useState(false)
   const [hasAnimatedTwo, setHasAnimatedTwo] = useState(false)
   const [hasAnimatedThree, setHasAnimatedThree] = useState(false)
@@ -199,4 +199,4 @@ const PeopleIntroduction: React.FC = () => {
   )
 }
 
-export default PeopleIntroduction
+export default PeopleIntroductionCards

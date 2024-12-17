@@ -20,7 +20,7 @@ const Phone: React.FC = () => {
   }, [])
 
   return (
-    <div className='absolute -bottom-0 left-1/2 -translate-x-1/2 z-10'>
+    <div className='absolute -bottom-0 left-1/2 -translate-x-1/2 z-30'>
       <motion.div
         initial={{ y: 0 }}
         animate={hasAnimatedThree ? { y: "-100vh" } : { y: 0 }}

@@ -5,7 +5,8 @@ import IntroText from "./IntroText"
 import Phone from "./Phone"
 import AboutText from "./AboutText"
 import debounce from "lodash.debounce"
-import PeopleIntroduction from "./PeopleIntroduction"
+import PeopleIntroductionCards from "./PeopleIntroductionCards"
+import PeopleIntroductionText from "./PeopleIntroductionText"
 
 const PlayFora: React.FC = () => {
   const [backgroundHasAnimatedOne, setBackgroundHasAnimatedOne] =
@@ -47,7 +48,8 @@ const PlayFora: React.FC = () => {
           <IntroText />
           <Phone />
           <AboutText />
-          <PeopleIntroduction />
+          <PeopleIntroductionCards />
+          <PeopleIntroductionText />
         </div>
       </div>
     </motion.section>

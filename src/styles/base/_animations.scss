@@ -2,27 +2,54 @@
 // This file contains animation styles.
 // -----------------------------------------------------------------------------
 
-.element-fade {
-  opacity: 0;
-  transition: opacity 0.5s ease-in 0.25s;
-  &.in-view {
-    opacity: 1;
+@keyframes curtain-off {
+  0% {
+    clip-path: inset(0 0 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 100% 0);
   }
 }
 
-// animation: bounce 3s infinite;
-@keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
+@keyframes curtain-on {
+  0% {
+    clip-path: inset(100% 0 0 0);
+  }
   100% {
-    transform: translateY(0);
+    clip-path: inset(0 0 0 0);
   }
-  40% {
-    transform: translateY(-15px);
-  }
-  60% {
-    transform: translateY(-15px);
-  }
+}
+
+// @keyframes zoom-on {
+//   0% {
+//     scale: 1;
+//   }
+//   100% {
+//     scale: 1.5;
+//   }
+// }
+
+// @keyframes zoom-off {
+//   0% {
+//     scale: 1.5;
+//   }
+//   100% {
+//     scale: 1;
+//   }
+// }
+
+.curtain-on {
+  animation: curtain-on 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards; /* Animation applies until the end state */
+}
+
+.curtain-off {
+  animation: curtain-off 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.6s forwards; /* Animation applies until the end state */
+}
+
+.curtain-off canvas {
+  animation: zoom-on 2s ease-out forwards;
+}
+
+.curtain-on canvas {
+  animation: zoom-off 2s ease-out forwards;
 }

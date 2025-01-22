@@ -10,6 +10,7 @@ export default {
         "light-gray": "#efefef",
         yellow: "#ffef5b",
         red: "#ff2500",
+        "anton-theme": "#105740",
       },
       fontFamily: {
         lato: ["Lato", "sans-serif"],

@@ -1,12 +1,13 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import reactRefresh from '@vitejs/plugin-react-refresh'
-import viteImagemin from 'vite-plugin-imagemin'
-import tsconfigPaths from 'vite-tsconfig-paths'
+import { defineConfig } from "vite"
+import react from "@vitejs/plugin-react"
+import reactRefresh from "@vitejs/plugin-react-refresh"
+import viteImagemin from "vite-plugin-imagemin"
+import tsconfigPaths from "vite-tsconfig-paths"
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '',
+  base: "",
+  assetsInclude: ["**/*.glsl", "**/*.vert", "**/*.frag"],
   plugins: [
     react(),
     reactRefresh(),
@@ -29,10 +30,10 @@ export default defineConfig({
       svgo: {
         plugins: [
           {
-            name: 'removeViewBox',
+            name: "removeViewBox",
           },
           {
-            name: 'removeEmptyAttrs',
+            name: "removeEmptyAttrs",
             active: false,
           },
         ],

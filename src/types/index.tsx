@@ -13,10 +13,11 @@ export type ImageProps = {
 export type LocomotiveScrollProps = {
   locoScrollRef: RefObject<HTMLElement>
   children: React.ReactNode
-  el: HTMLElement
+  el?: HTMLElement
 }
 
-export interface IExtendedLocomotiveScrollOptions extends ILocomotiveScrollOptions {
+export interface IExtendedLocomotiveScrollOptions
+  extends ILocomotiveScrollOptions {
   el: HTMLElement
 }
 

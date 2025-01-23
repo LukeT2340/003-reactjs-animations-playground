@@ -1,0 +1,15 @@
+.carousel-container {
+  display: flex;
+  width: 300vw; /* Ensures all three panels fit horizontally */
+  overflow: hidden; /* Hides content outside the container */
+  position: relative; /* Required for GSAP pinning */
+}
+
+.panel {
+  width: 100vw; /* Each panel takes the full width of the viewport */
+  height: 100vh; /* Set the height you need (usually viewport height) */
+  display: flex;
+  align-items: center; /* Centers content vertically */
+  justify-content: center; /* Centers content horizontally */
+  position: relative; /* Required for positioning child elements */
+}

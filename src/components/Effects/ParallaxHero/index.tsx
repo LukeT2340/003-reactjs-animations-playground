@@ -5,7 +5,7 @@ import { TextureLoader } from "three"
 import { Clouds, Cloud } from "@react-three/drei"
 import { lerp } from "three/src/math/MathUtils"
 
-const SectionOne: React.FC = () => {
+const ParallaxHero: React.FC = () => {
   return (
     <section className='relative w-full h-screen z-10'>
       <Canvas
@@ -35,8 +35,8 @@ const SectionOne: React.FC = () => {
             bounds={[6, 6, 7]}
             volume={2}
             color='white'
-            speed={0.1}
-            seed={9}
+            speed={0.2}
+            seed={3}
             opacity={0.5}
           />
         </Clouds>
@@ -47,20 +47,20 @@ const SectionOne: React.FC = () => {
             volume={2}
             color='white'
             speed={0.1}
-            seed={3}
+            seed={5}
             opacity={0.6}
           />
         </Clouds>
         <Clouds material={THREE.MeshBasicMaterial} position={[0, -2, -17]}>
           <Cloud
             segments={45}
-            bounds={[5, 5, 15]}
+            bounds={[5, 5, 5]}
             volume={2}
             scale={4}
             color='white'
-            speed={0.1}
-            seed={3}
-            opacity={0.8}
+            speed={0.2}
+            seed={4}
+            opacity={0.4}
           />
         </Clouds>
       </Canvas>
@@ -90,13 +90,13 @@ function CameraController() {
     // Smoothly interpolate the camera position using lerp
     cameraRef.current.position.x = lerp(
       cameraRef.current.position.x,
-      mouseX * 0.2,
-      0.1 // Lower values mean slower and smoother
+      mouseX * 0.8,
+      0.02 // Lower values mean slower and smoother
     )
     cameraRef.current.position.y = lerp(
       cameraRef.current.position.y,
-      mouseY * 0.2,
-      0.1
+      mouseY * 0.8,
+      0.02
     )
   })
 
@@ -133,4 +133,4 @@ function ForegroundImage({
   )
 }
 
-export default SectionOne
+export default ParallaxHero

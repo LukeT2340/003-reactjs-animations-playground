@@ -21,6 +21,10 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "public/assets"],
+  "include": [
+    "src",
+    "public/assets",
+    "src/components/Effects/OneElementScroll/pkgd.min.js"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -1,9 +1,15 @@
 import { useEffect } from "react"
 import LocomotiveScroll from "locomotive-scroll"
 // import { useMediaQuery } from 'react-responsive'
-import { LocomotiveScrollProps, IExtendedLocomotiveScrollOptions } from "../../types"
+import {
+  LocomotiveScrollProps,
+  IExtendedLocomotiveScrollOptions,
+} from "../../types"
 
-const LocomotiveParallax: React.FC<LocomotiveScrollProps> = ({ locoScrollRef, children }) => {
+const LocomotiveParallax: React.FC<LocomotiveScrollProps> = ({
+  locoScrollRef,
+  children,
+}) => {
   const divRef = locoScrollRef as React.RefObject<HTMLDivElement>
 
   // const mobile = useMediaQuery({ maxWidth: 1023 })
@@ -17,8 +23,8 @@ const LocomotiveParallax: React.FC<LocomotiveScrollProps> = ({ locoScrollRef, ch
       new LocomotiveScroll({
         el: divRef.current,
         smooth: true,
-        lerp: 0.07,
-        multiplier: 0.7,
+        lerp: 0.02,
+        multiplier: 1,
       } as IExtendedLocomotiveScrollOptions)
     }
   }, [divRef])

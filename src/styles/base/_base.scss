@@ -10,6 +10,8 @@ html {
   box-sizing: border-box;
   font-size: $rem-base;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 /**

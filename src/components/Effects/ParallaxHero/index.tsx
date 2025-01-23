@@ -1,9 +1,10 @@
-import React, { useRef } from "react"
-import { Canvas, useFrame, useLoader } from "@react-three/fiber"
+import React from "react"
+import { Canvas } from "@react-three/fiber"
 import * as THREE from "three"
-import { TextureLoader } from "three"
 import { Clouds, Cloud } from "@react-three/drei"
-import { lerp } from "three/src/math/MathUtils"
+import CameraController from "./CameraController"
+import Background from "./Background"
+import ForegroundImage from "./ForegroundImage"
 
 const ParallaxHero: React.FC = () => {
   return (
@@ -17,14 +18,18 @@ const ParallaxHero: React.FC = () => {
         }}
       >
         <CameraController />
-        <Background textureUrl='/assets/images/hero-parallax-3.jpg' />
+        <Background
+          textureUrl='/assets/images/ParallaxHero/hero-parallax-3.jpg'
+          position={[0, 0, -10]}
+          size={[80, 44]}
+        />
         <ForegroundImage
-          textureUrl='/assets/images/hero-parallax-1.png'
+          textureUrl='/assets/images/ParallaxHero/hero-parallax-1.png'
           position={[0, 0, -5]}
           size={[24, 13.5]}
         />
         <ForegroundImage
-          textureUrl='/assets/images/hero-parallax-2.png'
+          textureUrl='/assets/images/ParallaxHero/hero-parallax-2.png'
           position={[0, 0, -8]}
           size={[40, 23]}
         />
@@ -37,7 +42,7 @@ const ParallaxHero: React.FC = () => {
             color='white'
             speed={0.2}
             seed={3}
-            opacity={0.5}
+            opacity={0.4}
           />
         </Clouds>
         <Clouds material={THREE.MeshBasicMaterial} position={[0, -2, -14]}>
@@ -48,7 +53,7 @@ const ParallaxHero: React.FC = () => {
             color='white'
             speed={0.1}
             seed={5}
-            opacity={0.6}
+            opacity={0.4}
           />
         </Clouds>
         <Clouds material={THREE.MeshBasicMaterial} position={[0, -2, -17]}>
@@ -72,64 +77,6 @@ const ParallaxHero: React.FC = () => {
         <h6 className='uppercase font-bold'>Scroll to explore</h6>
       </div>
     </section>
-  )
-}
-
-function CameraController() {
-  const cameraRef = useRef<any>()
-
-  useFrame((state) => {
-    if (!cameraRef.current) {
-      cameraRef.current = state.camera
-    }
-
-    // Get mouse position in normalized device coordinates (-1 to +1)
-    const mouseX = state.pointer.x
-    const mouseY = state.pointer.y
-
-    // Smoothly interpolate the camera position using lerp
-    cameraRef.current.position.x = lerp(
-      cameraRef.current.position.x,
-      mouseX * 0.8,
-      0.02 // Lower values mean slower and smoother
-    )
-    cameraRef.current.position.y = lerp(
-      cameraRef.current.position.y,
-      mouseY * 0.8,
-      0.02
-    )
-  })
-
-  return null
-}
-
-function Background({ textureUrl }: { textureUrl: string }) {
-  const texture = useLoader(TextureLoader, textureUrl)
-
-  return (
-    <mesh position={[0, 0, -10]}>
-      <planeGeometry args={[80, 44]} />
-      <meshBasicMaterial map={texture} />
-    </mesh>
-  )
-}
-
-function ForegroundImage({
-  textureUrl,
-  position = [0, 0, 1],
-  size = [16, 9],
-}: {
-  textureUrl: string
-  position: [number, number, number]
-  size: [number, number]
-}) {
-  const texture = useLoader(TextureLoader, textureUrl)
-
-  return (
-    <mesh position={position}>
-      <planeGeometry args={size} />
-      <meshBasicMaterial map={texture} transparent={true} side={2} />
-    </mesh>
   )
 }
 

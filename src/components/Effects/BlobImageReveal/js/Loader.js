@@ -1,8 +1,8 @@
 import * as THREE from "three"
-import image1 from "../../../../public/assets/images/01.webp"
-import image2 from "../../../../public/assets/images/02.webp"
-import image3 from "../../../../public/assets/images/03.webp"
-import image4 from "../../../../public/assets/images/04.webp"
+import image1 from "../../../../../public/assets/images/BlobImageReveal/01.webp"
+import image2 from "../../../../../public/assets/images/BlobImageReveal/02.webp"
+import image3 from "../../../../../public/assets/images/BlobImageReveal/03.webp"
+import image4 from "../../../../../public/assets/images/BlobImageReveal/04.webp"
 
 export default class Loader {
   loadTextures(onComplete) {

@@ -1,12 +1,12 @@
-import "./base.css"
-import "./style.css"
+import "./styles/base.css"
+import "./styles/style.css"
 import * as THREE from "three"
 import gsap from "gsap"
-import MeshItem from "./MeshItem"
-import Loader from "./Loader"
+import MeshItem from "./js/MeshItem"
+import Loader from "./js/Loader"
 import { useEffect } from "react"
 
-const ShaderImageTransition = () => {
+const BlobImageReveal = () => {
   useEffect(() => {
     const canvas = document.querySelector("canvas.webgl")
     const scene = new THREE.Scene()
@@ -145,4 +145,4 @@ const ShaderImageTransition = () => {
   )
 }
 
-export default ShaderImageTransition
+export default BlobImageReveal

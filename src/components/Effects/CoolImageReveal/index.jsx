@@ -9,7 +9,7 @@ import { SplitText } from "gsap/all"
 
 gsap.registerPlugin(SplitText)
 
-function ShaderImageTransitionTwo({ image, text, smallerText }) {
+function CoolImageReveal({ image, text, smallerText }) {
   const textContainerRef = useRef(null)
 
   const { ref, inView, entry } = useInView({
@@ -91,4 +91,4 @@ function ShaderImageTransitionTwo({ image, text, smallerText }) {
   )
 }
 
-export default ShaderImageTransitionTwo
+export default CoolImageReveal

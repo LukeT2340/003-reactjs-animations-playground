@@ -3,8 +3,8 @@ import { extend, useFrame, useThree } from "@react-three/fiber"
 import PropTypes from "prop-types"
 import { useEffect, useRef } from "react"
 import * as THREE from "three"
-import imageRevealFragmentShader from "./fragment.glsl?raw"
-import imageRevealVertexShader from "./vertex.glsl?raw"
+import imageRevealFragmentShader from "./shaders/fragment.glsl?raw"
+import imageRevealVertexShader from "./shaders/vertex.glsl?raw"
 
 const ImageRevealMaterial = shaderMaterial(
   {

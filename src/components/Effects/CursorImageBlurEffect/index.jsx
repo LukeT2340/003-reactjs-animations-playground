@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 
-const CursorImageBlurEffect = () => {
+const CursorImageBlurEffect = ({ image }) => {
   useEffect(() => {
     /**
      * Linear interpolation
@@ -236,7 +236,7 @@ const CursorImageBlurEffect = () => {
           </filter>
           <g>
             <image
-              xlinkHref='/assets/images/2.jpg'
+              xlinkHref={image}
               x='150'
               y='187.5'
               width='300'

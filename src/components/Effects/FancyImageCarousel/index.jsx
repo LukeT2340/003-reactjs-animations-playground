@@ -60,7 +60,7 @@ const FancyImageCarousel = () => {
         text={"Image Three"}
         smallerText='Sub Text'
       />
-      <CursorImageBlurEffect />
+      <CursorImageBlurEffect image='/assets/images/2.jpg' />
     </section>
   )
 }

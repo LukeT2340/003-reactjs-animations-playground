@@ -137,7 +137,8 @@ const ShaderOnScroll = () => {
           media
         ).borderRadius.replace("px", "")
 
-        imageMesh.scale.set(bounds.width, bounds.height, 1)
+        // imageMesh.scale.set(bounds.width , bounds.height, 1)
+        imageMesh.scale.set(0.5 * bounds.width, 0.5 * bounds.height, 1)
 
         if (!(bounds.top >= 0 && bounds.top <= window.innerHeight)) {
           imageMesh.position.y = 2 * window.innerHeight
@@ -340,13 +341,21 @@ const ShaderOnScroll = () => {
       <canvas
         id='canvasD'
         className='fixed inset-0 z-50 opacity-100 pointer-events-none'
-      ></canvas>
-      <img
-        className='img mb-10 opacity-0'
-        src='/assets/images/1.webp'
-        alt='image of ceramic piece'
-        data-webgl-media
       />
+      <div className='flex'>
+        <img
+          className='img mb-10 opacity-0'
+          src='/assets/images/1.webp'
+          alt='image of ceramic piece'
+          data-webgl-media
+        />{" "}
+        <img
+          className='img mb-10 opacity-0'
+          src='/assets/images/4.webp'
+          alt='image of ceramic piece'
+          data-webgl-media
+        />
+      </div>
     </div>
   )
 }

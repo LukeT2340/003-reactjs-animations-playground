@@ -15,17 +15,17 @@ const App = () => {
         <BlobImageReveal />
         <ParallaxHero />
         <CoolImageReveal
-          image={"/assets/images/textureupscaled.webp"}
+          image={"/assets/images/CoolImageReveal/textureupscaled.webp"}
           text={"Image One"}
           smallerText='Sub Text'
         />
         <CoolImageReveal
-          image={"/assets/images/head.jpg"}
+          image={"/assets/images/CoolImageReveal/head.jpg"}
           text={"Image Two"}
           smallerText='Sub Text'
         />
         <CoolImageReveal
-          image={"/assets/images/blocks.jpg"}
+          image={"/assets/images/CoolImageReveal/blocks.jpg"}
           text={"Image Three"}
           smallerText='Sub Text'
         />

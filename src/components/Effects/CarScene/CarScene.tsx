@@ -1,13 +1,14 @@
 import * as THREE from "three"
-import { Canvas, useThree } from "@react-three/fiber"
+import { Canvas, useThree, useLoader } from "@react-three/fiber"
 import { KTX2Loader } from "three-stdlib"
 import { Gltf, Environment, CameraControls } from "@react-three/drei"
 import { Suspense } from "react"
+import { TextureLoader } from "three"
 
 const CarScene: React.FC = () => {
   return (
     <div className='h-screen w-screen'>
-      <Canvas camera={{ position: [-1, 0.5, 3] }} className='h-full w-full'>
+      <Canvas camera={{ position: [0, 0, 5] }}>
         <Suspense fallback={null}>
           <Scene />
         </Suspense>
@@ -20,7 +21,7 @@ const CarScene: React.FC = () => {
           </mesh>
         </Environment>
 
-        <ambientLight intensity={0.5} />
+        <ambientLight intensity={0.7} />
         <directionalLight intensity={0.6} position={[5, 5, 5]} />
 
         <CameraControls />
@@ -36,16 +37,28 @@ ktx2Loader.setTranscoderPath(
 
 function Scene() {
   const { gl } = useThree()
+  const carTexture = useLoader(TextureLoader, "/assets/images/Flar03Flip.png")
+  carTexture.encoding = THREE.sRGBEncoding
+  carTexture.flipY = true // Often needed for GLB models
 
   return (
     <>
       <Gltf
-        src={"/assets/images/car.glb"}
-        extendLoader={(loader) => {
-          loader.setKTX2Loader(ktx2Loader.detectSupport(gl))
+        src='/assets/images/car.glb'
+        onLoad={(gltf) => {
+          gltf.scene.traverse((child) => {
+            if (child.isMesh) {
+              // Create a new MeshStandardMaterial
+              child.material = new THREE.MeshStandardMaterial({
+                color: new THREE.Color("#000000"), // Change this to any color
+                metalness: 1,
+                roughness: 0.2,
+              })
+              child.material.needsUpdate = true
+            }
+          })
         }}
       />
-
       {/* Environment with fallback */}
       <Environment preset='sunset' background blur={0.5} />
 
